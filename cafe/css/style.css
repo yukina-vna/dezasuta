@@ -1,0 +1,344 @@
+@charset "utf-8";
+
+/* cssリセット */
+
+/*利用するタグによってこちらの内容は増やす*/
+
+html,
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dt,
+dd,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    /*デフォルトの文字色、font-familyを予め当てておく*/
+    color: #4f260b;
+    font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3",
+        "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝",
+        "ＭＳ 明朝", serif;
+}
+
+a {
+    /*下線を消す*/
+    text-decoration: none;
+    /*色を消す*/
+    color: inherit;
+    transition: 0.3s;
+}
+
+a :hover {
+    opacity: 0.5;
+}
+
+ul {
+    /*左の「・」を消す*/
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+    border: none;
+}
+body {
+    font-feature-settings: "palt";
+}
+
+/* ヘッダー */
+body {
+    background: gray;
+}
+
+.header_wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 7% 0 3%;
+}
+.header_logo {
+    width: 226px;
+}
+.pc_nav ul {
+    display: flex;
+}
+
+.pc_nav ul li {
+    width: 105px;
+    margin-left: 55px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
+        "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    text-align: center;
+}
+
+body {
+    background-color: #e8d9bf;
+}
+
+.top {
+    max-width: 1000px;
+    text-align: center;
+    margin: 0 auto;
+    /* padding: 0 10px 0 10px; */
+}
+/* このpaddingを入れるとtop全体の横幅が1020pxになってしまう：それでも良い
+paddingは外側がデフォルト 内側に変えることもできる*/
+
+.top p {
+    padding: 0 10px 0 10px;
+}
+
+.top_en {
+    font-size: 30px;
+    line-height: 0.7;
+    margin-top: 104px;
+    margin-bottom: 57px;
+}
+
+.top_main {
+    font-size: 82px;
+    line-height: 1.17;
+    letter-spacing: 0.1em;
+    margin-bottom: 18px;
+}
+
+.top_desc {
+    font-size: 23px;
+    line-height: 1.65;
+    letter-spacing: 0.1em;
+    margin-bottom: 98px;
+}
+
+.about {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.photo_coffee img {
+    border-bottom-right-radius: 80px;
+}
+/* 写真の縦横比を崩さないようdivで囲い、角丸を別でかけようとした */
+
+.photo_coffee {
+    /* width: 500px; px指定だと縮めていくと画像のみになってしまう*/
+    max-width: 50%;
+    padding-left: 10px;
+    border-bottom-right-radius: 80px;
+    /* 縮めていくと画像が伸びてしまう:divで囲む */
+}
+
+.about_text {
+    padding-right: 10px;
+    max-width: 43%;
+    /* どのように数値を設定するのかわからず目視でいい感じになるようにやってしまった：イラレの数値だとうまくいかない
+    コピーと下の説明文の右端が揃ってしまった 下の説明文は48％くらいがちょうど良い */
+}
+
+.about_text h2 {
+    width: 272px;
+    padding: 55px 0 48px 74px;
+    /* 親要素に％を指定したがこちらでpxで指定しているからなのか縮めていくときれてしまう */
+}
+
+.about_main {
+    font-size: 44px;
+    line-height: 1.39;
+    padding: 0 0 24px 74px;
+    /* フォントが見本と異なる気がする:h3にしていたから */
+    /* 縮めていくと改行位置がおかしくなるのを変えたい：メニューと同じように％にする？
+    about_textに％を指定 */
+}
+
+.about_desc {
+    font-size: 16px;
+    line-height: 1.62;
+    padding-left: 74px;
+    text-align: justify;
+    /* 文章を両端揃えにする */
+    /* 位置が上手くいっていない */
+}
+
+#menu {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.menu_text {
+    display: block;
+    width: 151px;
+    margin: 0 auto;
+    /* 調べたらブロック要素でないと margin:0 auto; が適用されないため、
+    インライン要素は「text-align: center;」で指定するとあったが、
+    text-align が適用されない:解釈間違っている？ */
+    /* display:block→margin 0 auto の二段構えでないといけないのか */
+    padding-top: 105px;
+    padding-bottom: 50px;
+}
+
+.menu_list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px 0 10px;
+}
+
+.menu_list img {
+    /* width: 300px; %で指定するのでいらない */
+    border-top-right-radius: 43px;
+}
+
+.menu_list h3 {
+    font-size: 38px;
+    line-height: 0.6;
+    color: #d30202;
+    padding-left: 12px;
+    padding-bottom: 20px;
+    font-weight: normal;
+    /* フォントが見本と異なる（見本よりも太い）気がする：見出しにすると太くなるのでfont-weightを指定する */
+}
+
+.menu_list p {
+    font-size: 17px;
+    line-height: 1.5;
+    /* white-space: nowrap; */
+    /* 自動改行を防ぐコード */
+    /* foodのテキストが横幅に収まっていない フォントの問題？：単純に他の2つと文字数が異なるから */
+    /* 画面を縮めていくと文章が重なってしまう：white-spaceのせい これはいらない、brタグを使わず横幅だけ％で指定する */
+}
+
+.menu_drink {
+    width: 30%;
+}
+
+.menu_food {
+    width: 30%;
+}
+
+.menu_sweets {
+    width: 30%;
+}
+
+.gallery_text {
+    width: 245px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 27px;
+}
+
+.gallery_photo {
+    display: flex;
+    width: 20%;
+    /* width: 384px; */
+}
+
+#event {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#event img {
+    display: block;
+    margin: 0 auto;
+    padding-top: 70px;
+    padding-bottom: 40px;
+    width: 174px;
+}
+
+.event_list {
+    border: 3.7px solid #4f260b;
+    background-color: #fff;
+    max-width: 1000px;
+    padding-bottom: 17px;
+    /* 画面を縮めていくと切れてしまうので縮小されていく方法を探す：max-width にしてheightを消す
+    縦の余白はpaddingで調整 */
+}
+
+.event_list ul {
+    font-size: 23px;
+    width: fit-content;
+    /* 最長の箇条書きに文頭を合わせて中央寄せにする */
+    margin: auto;
+    padding-top: 40px;
+}
+
+.event_list li {
+    padding-bottom: 26px;
+    text-decoration: underline;
+    /* 3日間限定の[]に下線が適用されない */
+}
+
+.event_date {
+    padding-right: 55px;
+    display: inline-block;
+    /* text-decoration: none; では消せない */
+}
+
+#access img {
+    width: 214px;
+    padding-top: 78px;
+    padding-bottom: 43px;
+    display: block;
+    margin: 0 auto;
+}
+
+#access iframe {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 470px;
+}
+
+.footer {
+    background-color: #fff;
+    /* TOPへボタンを設置するためmax-width:1000px;は書かない:設定すると白地が切れてしまう */
+}
+
+.footer_logo {
+    width: 227px;
+    padding-top: 82px;
+    padding-right: 70px;
+}
+
+.footer_domain {
+    max-width: 1000px;
+    display: flex;
+    margin: 0 auto;
+    /* justify-content: center; */
+    /* 横並びの上部を揃えたい */
+}
+
+.footer_text {
+    padding-top: 86px;
+    padding-bottom: 80px;
+    color: black;
+    font-size: 20px;
+    line-height: 1.95;
+    /* 親要素のfooterが真ん中になっていない（全幅）ため中央に表示できない:margin 0 autoでできる */
+}
+
+.footer_company {
+    color: black;
+    font-size: 16px;
+    text-align: center;
+}
+
+.to_top {
+    width: 125px;
+}
+
+/* どれを見出しとしたら良いのかわからずsectionをうまく使えない */

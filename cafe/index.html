@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="description" content="デザインカフェのサイトです。">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header id="top">
+        <!-- <section id="top"> -->
+        <!-- このheaderはリンク先にならない？idを別に設定しなくてはいけないのか:多重になっているのでheaderに -->
+        <div class="header_slider">
+            <div><img src="images/pc_first-100.jpg" alt="店内の様子"></div>
+        </div>
+        <div class="header_wrap">
+            <h1 class="header_logo"><img src="images/design_cafe_logo_header@2x.png" alt=""></h1>
+            <nav class="pc_nav">
+                <ul>
+                    <li><a href="">ABOUT US</a></li>
+                    <li><a href="">MENU</a></li>
+                    <li><a href="">GALLERY</a></li>
+                    <li><a href="">EVENT</a></li>
+                    <li><a href="">ACCESS</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- </section> -->
+    </header>
+
+    <div class="top">
+        <p class="top_en">Have a happy day From a cup of coffee.</p>
+        <p class="top_main">ハッピーに溢れる1日を <br> 1杯のコーヒーから。</p>
+        <p class="top_desc">毎日を丁寧に大切に過ごしたい。だからこそ一杯一杯丁寧にコーヒーを入れ <br>
+            足を運んでくれるお客さんには落ち着く空間とこだわりのコーヒーを提供したい。</p>
+        <!-- ここはコピーっぽいのでbrタグを使ったが使わない場合はどうしたら良いのか -->
+    </div>
+
+    <section class="about">
+        <div class="photo_coffee">
+            <img src="images/pc_about-100.jpg" alt="コーヒー">
+        </div>
+
+        <div class="about_text">
+            <h2><img src="images/about_us@2x.png" alt="ABOUT"></h2>
+            <p class="about_main">私たちが提供するこだわりのコーヒー</p>
+            <p class="about_desc">サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。
+                サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サー
+                ビスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。
+                サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。
+                サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。
+            </p>
+        </div>
+
+    </section>
+
+    <section id="menu">
+        <img class="menu_text" src="images/menu@2x.png" alt="MENU">
+
+        <div class="menu_list">
+
+            <div class="menu_drink">
+                <img src="images/pc_menu_drink-100.jpg" alt="ドリンク">
+                <h3>Drink</h3>
+                <p>ドリンクメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
+            </div>
+
+            <div class="menu_food">
+                <img src="images/pc_menu_food-100.jpg" alt="フード">
+                <h3>Food</h3>
+                <p>フードメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
+            </div>
+
+            <div class="menu_sweets">
+                <img src="images/pc_menu_sweets-100.jpg" alt="スイーツ">
+                <h3>Sweets</h3>
+                <p>スイーツメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2><img class="gallery_text" src="images/gallery@2x.png" alt="GALLERY"></h2>
+
+        <div class="gallery_photo">
+            <img src="images/pc_gallary_05-100.jpg" alt="賑やかな店内の様子">
+            <img src="images/pc_gallary_04-100.jpg" alt="コーヒー豆">
+            <img src="images/pc_gallary_03-100.jpg" alt="静かな店内の様子">
+            <img src="images/pc_gallary_02-100.jpg" alt="店内のインテリア">
+            <img src="images/pc_gallary_01-100.jpg" alt="ラテアート">
+        </div>
+    </section>
+
+    <section id="event">
+        <h2><img src="images/event@2x.png" alt="EVENT"></h2>
+
+        <div class="event_list">
+            <ul>
+                <li><span class="event_date">2020.06.23</span>7月はイベント出店のため0/0お休みします</li>
+                <li><span class="event_date">2020.03.15</span>春の新商品新発売。話題のあのブランドとコラボ</li>
+                <li><span class="event_date">2020.02.06</span>コーヒーの日で30%OFFイベントを開催[3日間限定]</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section id="access">
+        <h2><img src="images/access@2x.png" alt="ACCESS"></h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2271.8921837006246!2d139.7000696040303!3d35.65814059941501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b563b00109f%3A0x337328def1e2ab26!2z5riL6LC36aeF!5e0!3m2!1sja!2sjp!4v1692018521523!5m2!1sja!2sjp"
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <div class="footer">
+
+        <div class="footer_domain">
+            <div class="footer_logo"><img src="images/design_cafe_logo_footer@2x.png" alt="DESIGN CAFE"></div>
+            <p class="footer_text">OPEN 18:00 / CLOSE 24:00 <br>〒150-0022 <br>
+                東京都渋谷区東京南123デザインビルB1 <br>
+                MAIL：info@designcafe.tokyo</p>
+        </div>
+
+        <p class="footer_company">© 2021 DESIGN CAFE</p>
+
+    </div>
+
+
+    <div class="to_top" style="position: fixed; bottom: 40px; right: 40px;">
+        <a href="#top">
+            <img src="images/to_top@2x.png" alt="To Top">
+        </a>
+    </div>
+</body>
+
+</html>
