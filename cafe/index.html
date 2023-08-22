@@ -7,18 +7,38 @@
     <title>Document</title>
     <meta name="description" content="デザインカフェのサイトです。">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 </head>
 
 <body>
-    <header id="top">
-        <!-- <section id="top"> -->
+    <header id="first">
+        <!-- <section id="first"> -->
         <!-- このheaderはリンク先にならない？idを別に設定しなくてはいけないのか:多重になっているのでheaderに -->
-        <div class="header_slider">
-            <div><img src="images/pc_first-100.jpg" alt="店内の様子"></div>
+        <div class="header_slider_pc">
+            <img src="images/pc_first-100.jpg" alt="店内の様子">
         </div>
+        <div class="header_slider_sp">
+            <img src="images/sp_main_vs@2x-100.jpg" alt="店内の様子">
+        </div>
+
         <div class="header_wrap">
-            <h1 class="header_logo"><img src="images/design_cafe_logo_header@2x.png" alt=""></h1>
+            <h1 class="header_logo"><img src="images/design_cafe_logo_header@2x.png" alt="DESIGN CAFE"></h1>
+            <!-- 見出しに画像を使う場合、altに文字を必ず入れる -->
             <nav class="pc_nav">
+                <ul>
+                    <li><a href="#about">ABOUT US</a></li>
+                    <li><a href="#menu">MENU</a></li>
+                    <li><a href="#gallery">GALLERY</a></li>
+                    <li><a href="#event">EVENT</a></li>
+                    <li><a href="#access">ACCESS</a></li>
+                </ul>
+            </nav>
+            <div class="sp_btn">
+                <!-- 追加したopenメニューはコーディングのため、最初からバツなのは変なので消す -->
+                <span></span>
+            </div>
+            <!-- 線になるのがspanタグ 一部分の装飾に便利 -->
+            <nav class="sp_nav">
                 <ul>
                     <li><a href="">ABOUT US</a></li>
                     <li><a href="">MENU</a></li>
@@ -31,22 +51,33 @@
         <!-- </section> -->
     </header>
 
+    <script>
+        $(function () {
+
+            $('.sp_btn, .sp_nav li').on('click', function () {
+                $('.sp_btn').toggleClass('open');
+                $('.sp_nav').fadeToggle();
+            });
+        });
+    </script>
+
     <div class="top">
         <p class="top_en">Have a happy day From a cup of coffee.</p>
         <p class="top_main">ハッピーに溢れる1日を <br> 1杯のコーヒーから。</p>
         <p class="top_desc">毎日を丁寧に大切に過ごしたい。だからこそ一杯一杯丁寧にコーヒーを入れ <br>
             足を運んでくれるお客さんには落ち着く空間とこだわりのコーヒーを提供したい。</p>
-        <!-- ここはコピーっぽいのでbrタグを使ったが使わない場合はどうしたら良いのか -->
+        <!-- ここはコピーっぽいのでbrタグを使ったが使わない場合はどうしたら良いのか:使って良い -->
     </div>
 
-    <section class="about">
-        <div class="photo_coffee">
+    <section id="about">
+        <div class="photo_coffee_pc">
             <img src="images/pc_about-100.jpg" alt="コーヒー">
         </div>
 
         <div class="about_text">
             <h2><img src="images/about_us@2x.png" alt="ABOUT"></h2>
-            <p class="about_main">私たちが提供するこだわりのコーヒー</p>
+            <div class="photo_coffee_sp"><img src="images/about_us@2x-100.jpg" alt=""></div>
+            <p class="about_main">私たちが提供する <br>こだわりのコーヒー</p>
             <p class="about_desc">サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。
                 サービスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。サー
                 ビスを提供する上での想いや心がけていることなど、メッセージを文章で紹介します。
@@ -58,24 +89,28 @@
     </section>
 
     <section id="menu">
-        <img class="menu_text" src="images/menu@2x.png" alt="MENU">
+        <h2><img class="menu_text" src="images/menu@2x.png" alt="MENU"></h2>
 
         <div class="menu_list">
+            <!-- 画像を全て違うクラス名にしていた -->
 
-            <div class="menu_drink">
-                <img src="images/pc_menu_drink-100.jpg" alt="ドリンク">
+            <div class="menu_item">
+                <div class="menu_photo_pc"><img src="images/pc_menu_drink-100.jpg" alt="ドリンク"></div>
+                <div class="menu_photo_sp"><img src="images/drink_sp@2x-100.jpg" alt="ドリンク"></div>
                 <h3>Drink</h3>
                 <p>ドリンクメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
             </div>
 
-            <div class="menu_food">
-                <img src="images/pc_menu_food-100.jpg" alt="フード">
+            <div class="menu_item">
+                <div class="menu_photo_pc"><img src="images/pc_menu_food-100.jpg" alt="フード"></div>
+                <div class="menu_photo_sp"><img src="images/food_sp@2x-100.jpg" alt="フード"></div>
                 <h3>Food</h3>
                 <p>フードメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
             </div>
 
-            <div class="menu_sweets">
-                <img src="images/pc_menu_sweets-100.jpg" alt="スイーツ">
+            <div class="menu_item">
+                <div class="menu_photo_pc"><img src="images/pc_menu_sweets-100.jpg" alt="スイーツ"></div>
+                <div class="menu_photo_sp"><img src="images/cake_sp@2x-100.jpg" alt="スイーツ"></div>
                 <h3>Sweets</h3>
                 <p>スイーツメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
             </div>
@@ -85,13 +120,15 @@
     <section id="gallery">
         <h2><img class="gallery_text" src="images/gallery@2x.png" alt="GALLERY"></h2>
 
-        <div class="gallery_photo">
+        <div class="gallery_photo_pc">
             <img src="images/pc_gallary_05-100.jpg" alt="賑やかな店内の様子">
             <img src="images/pc_gallary_04-100.jpg" alt="コーヒー豆">
             <img src="images/pc_gallary_03-100.jpg" alt="静かな店内の様子">
             <img src="images/pc_gallary_02-100.jpg" alt="店内のインテリア">
             <img src="images/pc_gallary_01-100.jpg" alt="ラテアート">
         </div>
+
+        <div class="gallery_photo_sp"><img src="images/mobile_gallery-100.jpg" alt="店内の様子"></div>
     </section>
 
     <section id="event">
@@ -99,9 +136,10 @@
 
         <div class="event_list">
             <ul>
-                <li><span class="event_date">2020.06.23</span>7月はイベント出店のため0/0お休みします</li>
-                <li><span class="event_date">2020.03.15</span>春の新商品新発売。話題のあのブランドとコラボ</li>
-                <li><span class="event_date">2020.02.06</span>コーヒーの日で30%OFFイベントを開催[3日間限定]</li>
+                <li><time datetime="2020-06-23">2020.06.23</time>7月はイベント出店のため0/0お休みします</li>
+                <li><time datetime="2020-03-15">2020.03.15</time>春の新商品新発売。話題のあのブランドとコラボ</li>
+                <li><time datetime="2020-02-06">2020.02.06</time>コーヒーの日で30%OFFイベントを開催[3日間限定]</li>
+                <!-- 今まではspanタグで表示 日付専用のタグを使う -->
             </ul>
         </div>
 
@@ -128,11 +166,13 @@
     </div>
 
 
-    <div class="to_top" style="position: fixed; bottom: 40px; right: 40px;">
-        <a href="#top">
+    <div class="to_top">
+        <a href="#first">
             <img src="images/to_top@2x.png" alt="To Top">
         </a>
     </div>
+    <!-- style="position: fixed; bottom: 40px; right: 40px;"これはJSでコントロールしているので
+        今回は直接cssで指定する そのためにclassを当てる-->
 </body>
 
 </html>
