@@ -14,12 +14,15 @@
     <header id="first">
         <!-- <section id="first"> -->
         <!-- このheaderはリンク先にならない？idを別に設定しなくてはいけないのか:多重になっているのでheaderに -->
-        <div class="header_slider_pc">
-            <img src="images/pc_first-100.jpg" alt="店内の様子">
+        <div class="header_slider">
+            <div>
+                <picture>
+                    <source srcset="images/sp_main_vs@2x-100.jpg" media="(max-width: 767px)">
+                    <img src="images/pc_first-100.jpg" alt="店内の様子">
+                </picture>
+            </div>
         </div>
-        <div class="header_slider_sp">
-            <img src="images/sp_main_vs@2x-100.jpg" alt="店内の様子">
-        </div>
+
         <!-- pictureタグを使う -->
 
         <div class="header_wrap">
@@ -41,26 +44,17 @@
             <!-- 線になるのがspanタグ 一部分の装飾に便利 -->
             <nav class="sp_nav">
                 <ul>
-                    <li><a href="">ABOUT US</a></li>
-                    <li><a href="">MENU</a></li>
-                    <li><a href="">GALLERY</a></li>
-                    <li><a href="">EVENT</a></li>
-                    <li><a href="">ACCESS</a></li>
+                    <li><a href="#about">ABOUT US</a></li>
+                    <li><a href="#menu">MENU</a></li>
+                    <li><a href="#gallery">GALLERY</a></li>
+                    <li><a href="#event">EVENT</a></li>
+                    <li><a href="#access">ACCESS</a></li>
                 </ul>
             </nav>
         </div>
         <!-- </section> -->
     </header>
 
-    <script>
-        $(function () {
-
-            $('.sp_btn, .sp_nav li').on('click', function () {
-                $('.sp_btn').toggleClass('open');
-                $('.sp_nav').fadeToggle();
-            });
-        });
-    </script>
 
     <div class="top">
         <p class="top_en">Have a happy day From a cup of coffee.</p>
@@ -96,22 +90,34 @@
             <!-- 画像を全て違うクラス名にしていた -->
 
             <div class="menu_item">
-                <div class="menu_photo_pc"><img src="images/pc_menu_drink-100.jpg" alt="ドリンク"></div>
-                <div class="menu_photo_sp"><img src="images/drink_sp@2x-100.jpg" alt="ドリンク"></div>
+                <div class="menu_photo">
+                    <picture>
+                        <source srcset="images/drink_sp@2x-100.jpg" media="(max-width: 767px)">
+                        <img src="images/pc_menu_drink-100.jpg" alt="ドリンク">
+                    </picture>
+                </div>
                 <h3>Drink</h3>
                 <p>ドリンクメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
             </div>
 
             <div class="menu_item">
-                <div class="menu_photo_pc"><img src="images/pc_menu_food-100.jpg" alt="フード"></div>
-                <div class="menu_photo_sp"><img src="images/food_sp@2x-100.jpg" alt="フード"></div>
+                <div class="menu_photo">
+                    <picture>
+                        <source srcset="images/food_sp@2x-100.jpg" media="(max-width: 767px)">
+                        <img src="images/pc_menu_food-100.jpg" alt="フード">
+                    </picture>
+                </div>
                 <h3>Food</h3>
                 <p>フードメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
             </div>
 
             <div class="menu_item">
-                <div class="menu_photo_pc"><img src="images/pc_menu_sweets-100.jpg" alt="スイーツ"></div>
-                <div class="menu_photo_sp"><img src="images/cake_sp@2x-100.jpg" alt="スイーツ"></div>
+                <div class="menu_photo">
+                    <picture>
+                        <source srcset="images/cake_sp@2x-100.jpg" media="(max-width: 767px)">
+                        <img src="images/pc_menu_sweets-100.jpg" alt="スイーツ">
+                    </picture>
+                </div>
                 <h3>Sweets</h3>
                 <p>スイーツメニューの概要を100文字程度で紹介します。素材やこだわりなどをアピールしていきます。</p>
             </div>
@@ -129,7 +135,9 @@
             <img src="images/pc_gallary_01-100.jpg" alt="ラテアート">
         </div>
 
-        <div class="gallery_photo_sp"><img src="images/mobile_gallery-100.jpg" alt="店内の様子"></div>
+        <div class="gallery_photo_sp">
+            <img src="images/mobile_gallery-100.jpg" alt="店内の様子">
+        </div>
     </section>
 
     <section id="event">
@@ -137,9 +145,12 @@
 
         <div class="event_list">
             <ul>
-                <li><time datetime="2020-06-23">2020.06.23</time>7月はイベント出店のため0/0お休みします</li>
-                <li><time datetime="2020-03-15">2020.03.15</time>春の新商品新発売。話題のあのブランドとコラボ</li>
-                <li><time datetime="2020-02-06">2020.02.06</time>コーヒーの日で30%OFFイベントを開催[3日間限定]</li>
+                <li><time datetime="2020-06-23">2020.06.23</time> <br class="event_br">7月はイベント出店のため0/0お休みします
+                </li>
+                <li><time datetime="2020-03-15">2020.03.15</time> <br class="event_br">春の新商品新発売。話題のあのブランドとコラボ
+                </li>
+                <li><time datetime="2020-02-06">2020.02.06</time> <br class="event_br">コーヒーの日で30%OFFイベントを開催[3日間限定]
+                </li>
                 <!-- 今まではspanタグで表示 日付専用のタグを使う -->
             </ul>
         </div>
@@ -174,6 +185,15 @@
     </div>
     <!-- style="position: fixed; bottom: 40px; right: 40px;"これはJSでコントロールしているので
         今回は直接cssで指定する そのためにclassを当てる-->
+    <script>
+        $(function () {
+
+            $('.sp_btn, .sp_nav li').on('click', function () {
+                $('.sp_btn').toggleClass('open');
+                $('.sp_nav').fadeToggle();
+            });
+        });
+    </script>
 </body>
 
 </html>

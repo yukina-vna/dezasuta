@@ -65,16 +65,6 @@ body {
     display: none;
 }
 
-@media screen and (max-width: 767px) {
-    .header_slider_pc {
-        display: none;
-    }
-    .header_slider_sp {
-        display: block;
-        width: 100%;
-    }
-}
-
 .header_wrap {
     position: absolute;
     top: 0;
@@ -89,6 +79,13 @@ body {
 .header_logo {
     width: 226px;
 }
+
+@media screen and (max-width: 767px) {
+    .header_logo {
+        width: 188px;
+    }
+}
+
 .pc_nav ul {
     display: flex;
 }
@@ -105,6 +102,7 @@ body {
 }
 
 /* スマホ版メニューは消す */
+.sp_btn,
 .sp_nav {
     display: none;
     /* PC版の時には表示されない指定 */
@@ -259,6 +257,9 @@ paddingは外側がデフォルト 内側に変えることもできる*/
 }
 
 @media screen and (max-width: 767px) {
+    .top {
+        padding: 0 20px;
+    }
     .top_en {
         font-size: 17px;
     }
@@ -364,6 +365,7 @@ paddingは外側がデフォルト 内側に変えることもできる*/
         display: block;
         width: 100%;
     }
+    /* 見出しとの順番を入れ替えられずpictureタグを使えない */
     .about_text h2 {
         padding: 0 20px 18px 20px;
         width: 160px;
@@ -436,10 +438,6 @@ paddingは外側がデフォルト 内側に変えることもできる*/
     width: 30%;
 }
 
-.menu_photo_sp {
-    display: none;
-}
-
 /* .menu_food {
     width: 30%;
 }
@@ -449,14 +447,8 @@ paddingは外側がデフォルト 内側に変えることもできる*/
 } */
 
 @media screen and (max-width: 767px) {
-    .menu_photo_pc {
-        display: none;
-    }
-    .menu_photo_sp {
-        display: block;
-    }
     #menu {
-        padding: 0 38px 0 38px;
+        padding: 0 38px;
     }
     .menu_text {
         width: 88px;
@@ -501,22 +493,27 @@ paddingは外側がデフォルト 内側に変えることもできる*/
 }
 
 @media screen and (max-width: 767px) {
+    .gallery_text {
+        width: 142px;
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
     .gallery_photo_pc {
         display: none;
     }
     .gallery_photo_sp {
         display: block;
+        /* width: 100%; これが適用されないのはなぜ？*/
     }
-    .gallery_text {
-        width: 142px;
-        padding-top: 30px;
-        padding-bottom: 20px;
+    .gallery_photo_sp img {
+        width: 100%;
     }
 }
 
 #event {
     max-width: 1000px;
     margin: 0 auto;
+    padding: 0 10px;
 }
 
 #event img {
@@ -561,8 +558,31 @@ paddingは外側がデフォルト 内側に変えることもできる*/
     display: inline-block;
     /* text-decoration: none; では消せない */
 }
+.event_br {
+    display: none;
+}
 
 @media screen and (max-width: 767px) {
+    #event {
+        padding: 0 20px;
+    }
+    #event img {
+        width: 100px;
+        padding: 32px 0 20px 0;
+    }
+    .event_br {
+        display: block;
+    }
+    .event_list {
+        padding-left: 30px;
+    }
+    .event_list li {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        /* 何行表示させるかの指定 text-overflow: ellipsis; は1行のみの時に使える*/
+    }
 }
 
 #access img {
@@ -581,6 +601,14 @@ paddingは外側がデフォルト 内側に変えることもできる*/
 }
 
 @media screen and (max-width: 767px) {
+    #access img {
+        width: 124px;
+        padding-top: 32px;
+        padding-bottom: 10px;
+    }
+    #access iframe {
+        height: 191px;
+    }
 }
 
 .footer {
@@ -618,9 +646,6 @@ paddingは外側がデフォルト 内側に変えることもできる*/
     padding-bottom: 80px;
 }
 
-@media screen and (max-width: 767px) {
-}
-
 .to_top {
     width: 125px;
     position: fixed;
@@ -629,6 +654,30 @@ paddingは外側がデフォルト 内側に変えることもできる*/
 }
 
 @media screen and (max-width: 767px) {
+    .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .footer_logo {
+        padding-top: 40px;
+    }
+    .footer_domain {
+        display: block;
+    }
+    .footer_text {
+        font-size: 18px;
+        line-height: 1.72;
+        padding-top: 30px;
+        padding-bottom: 48px;
+    }
+    .footer_company {
+        padding-bottom: 30px;
+    }
+    .to_top {
+        width: 100px;
+        bottom: 50px;
+        right: 10px;
+    }
 }
 
 /* どれを見出しとしたら良いのかわからずsectionをうまく使えない */
