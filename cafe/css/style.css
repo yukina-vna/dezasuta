@@ -522,31 +522,38 @@ paddingは外側がデフォルト 内側に変えることもできる*/
     width: 20%;
 }
 
-.gallery_arrow_right {
+.slick-next {
+    right: 25%;
+}
+.slick-prev {
+    left: 25%;
+    z-index: 100;
+    /* かける位置注意 nextはx-indexいらない */
+}
+
+.slick-next:before {
+    content: "";
+    /* 中を空にすることでいらない矢印を消す */
     width: 15px;
     height: 15px;
     border-top: 4px solid #fff;
     border-right: 4px solid #fff;
-    transform: rotate(45deg);
+    transform: rotate(45deg) translateY(-50%);
+    /* 矢印の位置が少し下がってしまうのを直す */
     position: absolute;
-    z-index: 100;
-    right: 25%;
-    top: 75%;
 }
-.gallery_arrow_left {
+.slick-prev:before {
+    content: "";
     width: 15px;
     height: 15px;
     border-bottom: 4px solid #fff;
     border-left: 4px solid #fff;
-    transform: rotate(45deg);
+    transform: rotate(45deg) translateY(-50%);
     position: absolute;
-    z-index: 100;
     left: 25%;
-    top: 75%;
 }
-.lb_data .lb-nunber {
-    display: none !important;
-}
+/* topの指定はなくても良い（デフォルトで50％が指定されている） */
+/* デフォルトの矢印を書き換えることで、押すとスクロールされる機能を実装する */
 
 @media screen and (max-width: 767px) {
     .gallery_text {
@@ -578,7 +585,8 @@ paddingは外側がデフォルト 内側に変えることもできる*/
         width: 100%;
     }
     /* 親要素を広げてからでないと横幅いっぱいの指定ができない（？） */
-    .gallery_arrow_right {
+
+    .slick-next:before {
         width: 12px;
         height: 12px;
         border-top: 3px solid #fff;
@@ -586,7 +594,7 @@ paddingは外側がデフォルト 内側に変えることもできる*/
         right: 10%;
         top: 60%;
     }
-    .gallery_arrow_left {
+    .slick-prev:before {
         width: 12px;
         height: 12px;
         border-bottom: 3px solid #fff;
@@ -594,6 +602,9 @@ paddingは外側がデフォルト 内側に変えることもできる*/
         left: 10%;
         top: 60%;
     }
+}
+.lb-data .lb-number {
+    display: none !important;
 }
 
 #event {
@@ -770,5 +781,4 @@ paddingは外側がデフォルト 内側に変えることもできる*/
         right: 10px;
     }
 }
-
 /* どれを見出しとしたら良いのかわからずsectionをうまく使えない */
