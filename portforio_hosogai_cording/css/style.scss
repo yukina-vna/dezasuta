@@ -1,24 +1,367 @@
 $main-color: #fffddf;
+$base-color: #fffef5;
+$sky1-color: #18448e;
+$sky2-color: #211e55;
+$sky3-color: #191c32;
+$sky4-color: #7ec7d8;
 
-img {
-    max-width: 100%;
-    vertical-align: bottom;
-    border: none;
+// スクロールできるのはなぜ？？：解決 リセットCSS更新
+body {
+    background-color: $base-color;
+}
+h2 {
+    font-weight: normal;
 }
 
-.header_logo {
+.header_logo_fv {
     width: 120px;
     position: absolute;
-    top: 12px;
+    top: 5%;
+    // 位置が調整できなくなった:common.cssの方が反映されている
     left: 5%;
+    z-index: 200;
+    
 }
 
-.top_menu_pc {
-    color: $main-color;
+.header_menu_pc {
     position: absolute;
     top: 50px;
     right: 5%;
-ul {
+    z-index: 200;
+
+ul{
     display: flex;
+    }
+li {
+    padding-right: 3vw;
+    color: $main-color;
+    font-size: 17px;
 }
+ul li:last-child {
+    padding-right: 0;
 }
+
+}
+
+#mv {
+    position: relative;
+}
+
+.mv_main {
+    // position: relative;
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
+    z-index: -100;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    
+}
+
+.mv_foot1 {
+    width: 60px;
+    position: absolute;
+    top: 30%;
+    left: 29%;
+    transform: rotate(-15deg);
+}
+.mv_foot2 {
+    width: 60px;
+    position: absolute;
+    top: 40%;
+    left: 23%;
+    transform: rotate(10deg);
+}
+.mv_foot3 {
+    width: 60px;
+    position: absolute;
+    top: 46%;
+    left: 30%;
+    transform: rotate(-12deg);
+}
+.mv_foot4 {
+    width: 60px;
+    position: absolute;
+    top: 55%;
+    left: 24%;
+    transform: rotate(12deg);
+}
+.mv_text {
+    color: $main-color;
+    font-size: 30px;
+    position: absolute;
+    bottom: 35%;
+    right: 10%;
+    line-height: 1.5;
+}
+
+.concept_text {
+    font-size: 17px;
+    line-height: 1.8;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 72px;
+}
+.concept_scroll {
+    padding-top: 70px;
+    width: 23px;
+    margin: 0 auto;
+}
+
+#about {
+    margin-top: 160px;
+    display: flex;
+    }
+    h2 {
+        font-size: 28px;
+    }
+    p {
+        color: $sky1-color;
+        font-size: 20px;
+        padding-top: 10px;
+        // paddingが効かない
+        // margin-left: 10px;
+        // わたしについて、より若干左になっているのを揃えたい 色が反映されていない
+    }
+    .about_content {
+        display: block;
+        padding-left: 45px;
+        width: 30%;
+       
+    }
+    .about_text {
+        padding-top: 42px;
+        font-size: 15px;
+        line-height: 1.53;
+    }
+    .about_title {
+        display: block;
+    }
+    .about_head {
+        display: flex;
+    }
+    .about_clock {
+        width: 80px;
+        padding-left: 15px;
+        margin-top: -15px;
+    }
+    .about_me {
+        width: 25%;
+        min-width: 250px;
+        padding-left: 13%;
+        padding-right: 16%;
+    }
+    .view_more1 {
+        color: $sky1-color;
+        margin-top: 35px;
+        display: flex;
+        align-items: center; /* 垂直中心 */
+        // justify-content: center; /* 水平中心 */
+    &::after {
+        border-top: 1px solid $sky1-color;
+        content: "";
+        width: 185px; /* 線の長さ */
+    }  
+    &::after {
+        margin-left: 12px; /* 文字の左隣 */
+    }
+    }
+    // 文章とプロフィール画像の高さが常に揃うようにはできる？文字がどんどん小さくなってしまうが
+    // 線の位置が少し上なのをなんとかしたい
+    
+    // .works_circle {
+    //     padding-left: 70%;
+    // }
+
+    .works_top {
+    margin-top: 215px;
+    display: flex;
+    text-align: right;
+    justify-content: flex-end;
+    // margin: 0 0 0 auto;
+    p {
+        color: $sky2-color;
+        padding-top: 10px;
+    }
+    }
+    .works_content {
+        display: block;
+        width: 30%;
+        margin-top: 130px;
+        padding-right: 45px;
+    }
+    .works_text {
+        font-size: 15px;
+        line-height: 1.66;
+        padding-top: 30px;
+    }
+    .works_title {
+        display: block;
+    }
+    .works_head {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .works_clock {
+        width: 80px;
+        padding-right: 15px;
+        margin-top: -15px;
+    }
+   
+    .myworks {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .myworks_content_site {
+        width: 30%;
+        height: 300px;
+        background: #dcdde7;
+        margin-bottom: 47px;
+        margin-top: 20px;
+            }
+    .myworks_content_banner {
+        img {width: 250px;
+        }
+        width: 30%;
+        height: 300px;
+        background: #dcdde7;
+    }
+    // 夜空の写真と作品の右端を揃えたい
+    // 資格の真ん中に作品の写真を配置したい
+
+    .view_more2 {
+        color: $sky2-color;
+        display: flex;
+        align-items: center; /* 垂直中心 */
+        // justify-content: center; /* 水平中心 */
+        padding-top: 30px;
+    &::after {
+        border-top: 1px solid $sky1-color;
+        content: "";
+        width: 185px; /* 線の長さ */
+    }  
+    &::after {
+        margin-left: 12px; /* 文字の左隣 */
+    }
+    }
+    // view moreを右端にできない
+
+    #service {
+        margin-top: 150px;
+    }
+    .service_top {
+        display: flex;
+        }
+        h2 {
+            font-size: 28px;
+        }
+        p {
+            color: $sky3-color;
+            font-size: 20px;
+            padding-top: 10px;
+            // padding反映されていない？
+        }
+        .service_head {
+            display: flex;
+            padding-left: 45px;
+            padding-top: 130px;
+            width: 30%;
+        }
+        
+        .service_title {
+            display: block;
+        }
+        .service_clock {
+            width: 80px;
+            padding-left: 15px;
+            margin-top: -15px;
+        }
+        .service_content {
+            max-width: 690px;
+            h3 {
+                font-weight: normal;
+                font-size: 20px;
+                padding-top: 40px;
+            }
+            p {
+                font-size: 15px;
+                line-height: 1.5;
+            }
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        .service_design {
+            width: 35%;
+            padding-bottom: 100px;
+            img {
+                width: 165px;
+            }
+        }
+        .service_cording {
+            width: 35%;
+            padding-bottom: 100px;
+            img {
+                width: 189px;
+            }
+        }
+        .service_writing {
+            width: 35%;
+            img {
+                width: 180px;
+            }
+        }
+        .service_others {
+            width: 35%;
+            img {
+                width: 162px;
+            }
+        }
+
+        #contact {
+            margin-top: 110px;
+        }
+        .contact_content{
+            display: flex;
+            justify-content: flex-end;
+        }
+        .contact_sky {
+            margin-top: 90px;
+            // text-align: right;
+        }
+        .contact_head {
+            display: block;
+            margin: 0 auto;
+            p {
+                color: $sky4-color;
+                padding-top: 10px;
+            }
+            text-align: center;
+        }
+        .contact_clock {
+            padding-bottom: 40px;
+            width: 80px;
+            display: block;
+            margin: 0 auto;
+        }
+        .contact_text {
+            font-size: 15px;
+            line-height: 1.4;
+            padding-top: 82px;
+        }
+        .contact_button {
+            width: 400px;
+            height: 60px;
+            text-align: center;
+            font-size: 18px;
+            color: $main-color;
+            background-color: #171c61;
+            margin-top: 95px;
+        }

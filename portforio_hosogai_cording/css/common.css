@@ -1,0 +1,132 @@
+@charset "utf-8";
+
+/* cssリセット */
+
+/*利用するタグによってこちらの内容は増やす*/
+
+html,
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dt,
+dd,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    /*デフォルトの文字色、font-familyを予め当てておく*/
+    color: #171c61;
+    font-family: "fot-tsukuardgothic-std", "brush-script-std", "游ゴシック体",
+        YuGothic, "游ゴシック", "Yu Gothic", "メイリオ",
+        "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+}
+
+a {
+    /*下線を消す*/
+    text-decoration: none;
+    /*色を消す*/
+    color: inherit;
+}
+
+ul {
+    /*左の「・」を消す*/
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+    border: none;
+}
+body {
+    background: #fffef5;
+    margin: 0px;
+    overflow-x: hidden; /* 背景の円が画面からはみ出しても横スクロールが出ないようにする */
+}
+
+#footer {
+    margin-top: 120px;
+    position: relative;
+}
+
+.footer_menu {
+    width: 810px;
+    position: absolute;
+    z-index: 120;
+    top: 22%;
+    left: 20%;
+    /* 真ん中に寄せたい */
+}
+.footer_sky img {
+    /* margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw); */
+    /* 画面を広げると画像が切れてしまう */
+    width: 100vw;
+}
+.footer img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.footer_menu ul {
+    display: flex;
+    font-size: 16px;
+    justify-content: space-between;
+}
+.footer_menu li {
+    color: #fffddf;
+}
+#footer small {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    font-size: 12px;
+    color: #fffddf;
+}
+
+#header {
+    position: relative;
+}
+.header_logo {
+    width: 80px;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+}
+.header_sky img {
+    width: 100vw;
+    height: auto;
+    /* 画面を縮めていくと高さが足りなくなってしまう */
+}
+.header_menu_pc {
+    position: absolute;
+    top: 50px;
+    right: 5%;
+    z-index: 200;
+}
+
+.header_menu_pc ul {
+    display: flex;
+}
+.header_menu_pc li {
+    padding-right: 3vw;
+    color: #fffddf;
+    font-size: 17px;
+}
+.header_menu_pc ul li:last-child {
+    padding-right: 0;
+}
+
+.bottom_circle {
+    text-align: center;
+}
+.bottom_circle div {
+    padding-top: 30px;
+}
+.bottom_circle div:first-child {
+    padding-top: 0;
+}

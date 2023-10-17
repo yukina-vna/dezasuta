@@ -1,0 +1,190 @@
+#profile_title {
+    max-width: 1000px;
+    margin: 0 auto;
+    // 見出しと名前の左端がずっと揃ったまま小さくなるようにしたい
+}
+.profile_top {
+    display: flex;
+}
+.profile_text {
+    margin-top: 120px;
+    // margin-left: 183px;
+    h2 {
+        font-size: 50px;
+        font-weight: normal;
+    }
+    p {
+        font-size: 60px;
+        font-family: 'brush-script-std';
+        font-style: italic;
+        color: #b9bbd0;
+        padding-top: 10px;
+    }
+    // img {
+    //     width: 170px;
+    // }
+}
+.profile_clock {
+    margin-top: 85px;
+    margin-left: 40px;
+    width: 170px;
+}
+
+#profile_content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.name {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 115px;
+}
+.name_head {
+    width: 60%;
+    h3 {
+        font-size: 30px;
+        font-weight: normal;
+    }
+    p {
+        position: relative;
+        font-size: 15px;
+        padding-top: 10px;
+        padding-bottom: 6px;
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: -800px;
+            display: block;
+            width: 1000px;
+            height: 1px;
+            background: #171c61;
+        }
+    }
+}
+.name_job {
+    font-size: 17px;
+    padding-top: 35px;
+}
+.name_age {
+    padding-top: 16px;
+    font-size: 16px;
+    line-height: 1.25;
+}
+.name_text {
+    padding-top: 25px;
+    font-size: 15px;
+    line-height: 1.33;
+}
+.name_me {
+    width: 400px;
+    padding-left: 15px;
+}
+
+#favorite {
+    height: 1000px;
+    margin-top: 90px;
+    h3 {
+        font-weight: normal;
+        font-size: 30px;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: -800px;
+            display: block;
+            width: 1000px;
+            height: 1px;
+            background: #171c61;
+        }
+    }
+}
+
+.wave1 {
+    img {
+        width: 100vw;
+        height: auto;
+    }
+}
+.favorite_music {
+    background-color: #d1dae8;
+}
+.wave2 {
+    img {
+        width: 100vw;
+        height: auto;
+    }
+}
+
+.favorite_content {
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    margin-top: 110px;
+}
+.favorite_text {
+    h4 {
+        font-weight: normal;
+        font-size: 25px;
+        margin: 0;
+    }
+    p {
+        font-size: 20px;
+    }
+    width: 50%;
+    padding-left: 72px;
+}
+.favoreite_violin {
+    width: 300px;
+}
+.music_text {
+    font-size: 15px;
+    line-height: 1.8;
+}
+.favorite_picture {
+    background-color: #d1dae8;
+}
+.picture_text {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+#about_important {
+    max-width: 1000px;
+    h3 {
+        font-weight: normal;
+        font-size: 30px;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: -800px;
+            display: block;
+            width: 1000px;
+            height: 1px;
+            background: #171c61;
+        }
+    }
+    h4 {
+        font-size: 20px;
+        font-weight: normal;
+        padding-top: 30px;
+        padding-bottom: 20px;
+        // 反映されない…
+    }
+    p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+}
+#about_important {
+   margin: 0 auto;
+   margin-top: 85px;
+}
+.important_content {
+    display: flex;
+    justify-content: space-between;
+}
