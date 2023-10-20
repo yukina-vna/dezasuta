@@ -89,6 +89,23 @@ h2 {
   line-height: 1.5;
 }
 
+@media screen and (max-width: 1000px) {
+  .mv_foot1 {
+    width: 35px;
+  }
+  .mv_foot2 {
+    width: 35px;
+  }
+  .mv_foot3 {
+    width: 35px;
+  }
+  .mv_foot4 {
+    width: 35px;
+  }
+  .mv_text {
+    font-size: 25px;
+  }
+}
 .concept_text {
   font-size: 17px;
   line-height: 1.8;
@@ -112,10 +129,11 @@ h2 {
   font-size: 28px;
 }
 
-p {
+.title_sub1 {
   color: #18448e;
   font-size: 20px;
   padding-top: 10px;
+  padding-left: 6px;
 }
 
 .about_content {
@@ -147,8 +165,8 @@ p {
 .about_me {
   width: 25%;
   min-width: 250px;
-  padding-left: 13%;
-  padding-right: 16%;
+  padding-left: 8%;
+  padding-right: 8%;
 }
 
 .view_more1 {
@@ -172,9 +190,11 @@ p {
   text-align: right;
   justify-content: flex-end;
 }
-.works_top p {
+.works_top .title_sub2 {
   color: #211e55;
   padding-top: 10px;
+  padding-right: 6px;
+  font-size: 20px;
 }
 
 .works_content {
@@ -211,6 +231,7 @@ p {
   flex-wrap: wrap;
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 5%;
 }
 
 .myworks_content_site {
@@ -235,6 +256,7 @@ p {
   display: flex;
   align-items: center; /* 垂直中心 */
   padding-top: 30px;
+  margin: 0 0 0 auto;
 }
 .view_more2::after {
   border-top: 1px solid #18448e;
@@ -257,10 +279,11 @@ h2 {
   font-size: 28px;
 }
 
-p {
+.title_sub3 {
   color: #191c32;
   font-size: 20px;
   padding-top: 10px;
+  padding-left: 6px;
 }
 
 .service_head {
@@ -284,6 +307,7 @@ p {
   max-width: 690px;
   display: flex;
   justify-content: space-between;
+  padding: 0 10%;
   margin: 0 auto;
   flex-wrap: wrap;
 }
@@ -348,6 +372,7 @@ p {
 .contact_head p {
   color: #7ec7d8;
   padding-top: 10px;
+  font-size: 20px;
 }
 
 .contact_clock {

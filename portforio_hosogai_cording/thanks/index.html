@@ -11,8 +11,19 @@
     <link rel="stylesheet" href="../css/common.css">
     <script src="../js/script.js"></script>
 </head>
+<script type="text/javascript">
+    let submitted = false;
+</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display: none"
+    onload="if(submitted){window.location='https://dezasuta.com/portforio_hosogai_cording/thanks/';}"></iframe>
+
 
 <body>
+    <form
+        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfIYxEI1yTnDHFUySbBAJdl4TDP86McjEtz0xxR_AilNagYIQ/formResponse"
+        method="POST" target="hidden_iframe" onsubmit="submitted=true;" class="c-form">
+    </form>
+
     <section id="thanks">
         <div class="mv_main"><img src="../images/main.png" alt=""></div>
         <div class="header_logo_fv"><img src="../images/logo.svg" alt="logo"></div>
@@ -55,7 +66,6 @@
         </div>
         <small>&copy;Nacht Design</small>
     </section>
-
 </body>
 
 </html>

@@ -86,10 +86,16 @@
 }
 
 #favorite {
+  padding-top: 95px;
+  position: relative;
   height: 1000px;
-  margin-top: 90px;
+  margin: 0 auto;
 }
 #favorite h3 {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 6px;
+  margin-bottom: 110px;
   font-weight: normal;
   font-size: 30px;
   position: relative;
@@ -111,6 +117,7 @@
 }
 
 .favorite_music {
+  padding: 0 5%;
   background-color: #d1dae8;
 }
 
@@ -119,24 +126,31 @@
   height: auto;
 }
 
+.back_music {
+  position: absolute;
+  top: 30%;
+}
+
 .favorite_content {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   max-width: 1000px;
-  margin-top: 110px;
+  margin: 0 auto;
 }
 
 .favorite_text {
   width: 50%;
-  padding-left: 72px;
+  padding-left: 140px;
 }
 .favorite_text h4 {
   font-weight: normal;
   font-size: 25px;
   margin: 0;
+  padding-bottom: 9px;
 }
 .favorite_text p {
   font-size: 20px;
+  padding-bottom: 45px;
 }
 
 .favoreite_violin {
@@ -148,8 +162,34 @@
   line-height: 1.8;
 }
 
+.favorite_content2 {
+  display: flex;
+  justify-content: left;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.favorite_text2 {
+  width: 50%;
+  padding-right: 140px;
+}
+.favorite_text2 h4 {
+  font-weight: normal;
+  font-size: 25px;
+  margin: 0;
+  padding-bottom: 9px;
+}
+.favorite_text2 p {
+  font-size: 20px;
+  padding-bottom: 45px;
+}
+
 .favorite_picture {
   background-color: #d1dae8;
+  padding-top: 220px;
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .picture_text {
@@ -157,8 +197,21 @@
   line-height: 1.8;
 }
 
+.favorite_works {
+  width: 300px;
+  background: #fffef5;
+  z-index: 100;
+}
+
+.back_picture {
+  position: absolute;
+  bottom: 0.1%;
+  right: 5%;
+}
+
 #about_important {
   max-width: 1000px;
+  margin-top: 75px;
 }
 #about_important h3 {
   font-weight: normal;
@@ -178,8 +231,6 @@
 #about_important h4 {
   font-size: 20px;
   font-weight: normal;
-  padding-top: 30px;
-  padding-bottom: 20px;
 }
 #about_important p {
   font-size: 14px;
@@ -194,4 +245,12 @@
 .important_content {
   display: flex;
   justify-content: space-between;
+}
+
+.about_message {
+  font-size: 14px;
+  line-height: 1.57;
+  text-align: center;
+  margin-top: 140px;
+  margin-bottom: 80px;
 }/*# sourceMappingURL=style.css.map */

@@ -33,21 +33,60 @@
     margin: 0 auto;
 }
 .sky_base {
+   z-index: -100;
+   position: relative;
+   text-align: right;
    margin-top: -5px;
    width: 30%;
+   height: 100vw;
 //    縦幅を画面いっぱいにしたい
 }
-.concept_sky {
-    display: flex;
-    justify-content: flex-end;
-    h3 {
+.concept_content {
+    h3 { 
         font-size: 17px;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 500;
+            left: -40px;
+            display: block;
+            width: 825px;
+            height: 1px;
+            background: #171c61;
+            margin-top: 4px;
+        }
     }
     p {
+        padding-top: 15px;
         font-size: 15px;
         line-height: 1.66;
         width: 50%;
     }
+}
+.concept_sky1 {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 60%;
+    margin-left: 50px;
+}
+.concept_sky2 {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 80%;
+}
+.concept_sky3 {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 100%;
+}
+.concept_sky4 {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 120%;
 }
 .sky_img {
     width: 30%;

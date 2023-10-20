@@ -98,6 +98,24 @@ ul li:last-child {
     line-height: 1.5;
 }
 
+@media screen and (max-width: 1000px) {
+    .mv_foot1 {
+        width: 35px;
+    }
+    .mv_foot2 {
+        width: 35px;
+    }
+    .mv_foot3 {
+        width: 35px;
+    }
+    .mv_foot4 {
+        width: 35px;
+    }
+    .mv_text {
+        font-size: 25px;
+    }
+}
+
 .concept_text {
     font-size: 17px;
     line-height: 1.8;
@@ -118,11 +136,12 @@ ul li:last-child {
     h2 {
         font-size: 28px;
     }
-    p {
+    .title_sub1 {
         color: $sky1-color;
         font-size: 20px;
         padding-top: 10px;
-        // paddingが効かない
+        padding-left: 6px;
+        // paddingが効かない：解決
         // margin-left: 10px;
         // わたしについて、より若干左になっているのを揃えたい 色が反映されていない
     }
@@ -151,8 +170,8 @@ ul li:last-child {
     .about_me {
         width: 25%;
         min-width: 250px;
-        padding-left: 13%;
-        padding-right: 16%;
+        padding-left: 8%;
+        padding-right: 8%;
     }
     .view_more1 {
         color: $sky1-color;
@@ -182,9 +201,11 @@ ul li:last-child {
     text-align: right;
     justify-content: flex-end;
     // margin: 0 0 0 auto;
-    p {
+    .title_sub2 {
         color: $sky2-color;
         padding-top: 10px;
+        padding-right: 6px;
+        font-size: 20px;
     }
     }
     .works_content {
@@ -217,6 +238,7 @@ ul li:last-child {
         flex-wrap: wrap;
         max-width: 1000px;
         margin: 0 auto;
+        padding: 0 5%;
     }
     .myworks_content_site {
         width: 30%;
@@ -241,6 +263,7 @@ ul li:last-child {
         align-items: center; /* 垂直中心 */
         // justify-content: center; /* 水平中心 */
         padding-top: 30px;
+        margin: 0 0 0 auto;
     &::after {
         border-top: 1px solid $sky1-color;
         content: "";
@@ -261,11 +284,12 @@ ul li:last-child {
         h2 {
             font-size: 28px;
         }
-        p {
+        .title_sub3 {
             color: $sky3-color;
             font-size: 20px;
             padding-top: 10px;
-            // padding反映されていない？
+            padding-left: 6px;
+            // padding反映されていない？：解決
         }
         .service_head {
             display: flex;
@@ -295,6 +319,7 @@ ul li:last-child {
             }
             display: flex;
             justify-content: space-between;
+            padding: 0 10%;
             margin: 0 auto;
             flex-wrap: wrap;
         }
@@ -342,6 +367,7 @@ ul li:last-child {
             p {
                 color: $sky4-color;
                 padding-top: 10px;
+                font-size: 20px;
             }
             text-align: center;
         }

@@ -24,3 +24,57 @@
     margin-left: 40px;
     width: 170px;
 }
+.contact_form {
+    max-width: 685px;
+    margin: 0 auto;
+}
+
+.contact_desc {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 120px;
+    margin-bottom: 65px;
+}
+
+form div {
+    margin-bottom: 60px;
+}
+
+label {
+    font-size: 18px;
+    margin-bottom: 5px;
+    display: block;
+}
+input[type="text"],
+input[type="furigana"],
+input[type="phone"],
+input[type="email"],
+textarea {
+    background: #fffef5;
+    border: 1px #171c61 solid;
+    border-radius: 10px;
+}
+
+input[type="text"],
+input[type="furigana"],
+input[type="phone"],
+input[type="email"] {
+    width: 685px;
+    height: 50px;
+}
+
+textarea {
+    width: 685px;
+    height: 350px;
+}
+
+input[type="submit"] {
+    width: 400px;
+    height: 60px;
+    font-size: 18px;
+    color: #fffef5;
+    background: #171c61;
+    border: none;
+    display: block;
+    margin: 0 auto;
+}
