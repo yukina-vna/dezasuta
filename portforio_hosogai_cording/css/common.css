@@ -47,10 +47,17 @@ body {
     margin: 0px;
     overflow-x: hidden; /* 背景の円が画面からはみ出しても横スクロールが出ないようにする */
 }
+a:hover {
+    opacity: 0.5;
+}
 
 #footer {
     margin-top: 120px;
     position: relative;
+}
+
+.footer_sky_sp {
+    display: none;
 }
 
 .footer_menu {
@@ -87,6 +94,29 @@ body {
     font-size: 12px;
     color: #fffddf;
 }
+@media screen and (max-width: 767px) {
+    .footer_sky {
+        display: none;
+    }
+    .footer_sky_sp {
+        display: block;
+    }
+    .footer_menu {
+        width: 100%;
+        top: 12%;
+    }
+    .footer_menu ul {
+        display: block;
+        text-align: center;
+    }
+    .footer_menu li {
+        padding-bottom: 6%;
+    }
+    #footer small {
+        font-size: 8px;
+        bottom: 5%;
+    }
+}
 
 #header {
     position: relative;
@@ -119,6 +149,98 @@ body {
 }
 .header_menu_pc ul li:last-child {
     padding-right: 0;
+}
+.header_sky_sp {
+    display: none;
+}
+.sp_btn,
+.sp_nav {
+    display: none;
+}
+@media screen and (max-width: 767px) {
+    .header_logo {
+        width: 37px;
+        left: 5%;
+    }
+    .header_sky {
+        display: none;
+    }
+    .header_sky_sp {
+        display: block;
+    }
+    .header_menu_pc {
+        display: none;
+    }
+    .sp_btn {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        display: block;
+        height: 23px;
+        cursor: pointer;
+        z-index: 200;
+    }
+    .sp_btn span {
+        position: relative;
+        top: 10px;
+        display: block;
+        width: 33px;
+        height: 3px;
+        border-radius: 2px;
+        background: #fffddf;
+        transition: 0.3s;
+    }
+
+    .sp_btn span::before,
+    .sp_btn span::after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 33px;
+        height: 3px;
+        border-radius: 2px;
+        background: #fffddf;
+        transition: 0.3s;
+    }
+    .sp_btn span::before {
+        bottom: 10px;
+    }
+    .sp_btn span::after {
+        top: 10px;
+    }
+
+    .sp_btn.open span {
+        background: transparent;
+    }
+    .sp_btn.open span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+    .sp_btn.open span::after {
+        top: 0;
+        transform: rotate(135deg);
+    }
+    .sp_nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #171c61;
+        z-index: 1;
+    }
+    .sp_nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .sp_nav ul li {
+        padding: 20px;
+        color: #fffddf;
+        font-size: 18px;
+    }
 }
 
 .bottom_circle {

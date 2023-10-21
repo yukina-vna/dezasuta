@@ -22,10 +22,24 @@ h2 {
     z-index: 200;
     
 }
+@media screen and (max-width: 1000px) {
+    .header_logo_fv {
+        width: 70px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header_logo_fv {
+        width: 50px;
+    }
+    .header_menu_pc {
+        display: none;
+    }
+}
 
 .header_menu_pc {
     position: absolute;
-    top: 50px;
+    top: 70px;
     right: 5%;
     z-index: 200;
 
@@ -59,6 +73,9 @@ ul li:last-child {
         height: auto;
     }
     
+}
+.mv_main_sp {
+    display: none;
 }
 
 .mv_foot1 {
@@ -115,6 +132,49 @@ ul li:last-child {
         font-size: 25px;
     }
 }
+@media screen and (max-width: 767px) {
+    .mv_main {
+        display: none;
+    }
+    .mv_main_sp {
+        display: block;
+        margin-right: calc(50% - 50vw);
+        margin-left: calc(50% - 50vw);
+        z-index: -100;
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+    .mv_foot1 {
+        width: 30px;
+        top: 50%;
+        left: 35%;
+    }
+    .mv_foot2 {
+        width: 30px;
+        top: 57%;
+    }
+    .mv_foot3 {
+        width: 30px;
+        top: 65%;
+        left: 36%;
+    }
+    .mv_foot4 {
+        width: 30px;
+        top: 75%;
+        left: 27%;
+    }
+    .mv_text {
+        font-size: 17px;
+        text-align: center;
+        line-height: 1.76;
+        top: 30%;
+        
+    }
+}
+
 
 .concept_text {
     font-size: 17px;
@@ -129,7 +189,7 @@ ul li:last-child {
     margin: 0 auto;
 }
 
-#about {
+.about_all {
     margin-top: 160px;
     display: flex;
     }
@@ -173,6 +233,15 @@ ul li:last-child {
         padding-left: 8%;
         padding-right: 8%;
     }
+    .about_me_sp {
+        display: none;
+    }
+    .about_text_sp {
+        display: none;
+    }
+    .view_more1_sp {
+        display: none;
+    }
     .view_more1 {
         color: $sky1-color;
         margin-top: 35px;
@@ -195,18 +264,93 @@ ul li:last-child {
     //     padding-left: 70%;
     // }
 
+    @media screen and (max-width: 767px) {
+        .concept_text {
+            font-size: 13px;
+            line-height: 1.84;
+            margin-top: 52px;
+        }
+        .concept_scroll {
+            width: 18px;
+        }
+        #about {
+            margin-top: 80px;
+            h2 {
+                font-size: 20px;
+            }
+            p {
+                font-size: 15px;
+            }
+        }
+        .about_sp {
+            max-width: 250px;
+            margin: 0 auto;
+        }
+        .about_content {
+            width: 80%;
+            padding-left: 18px;
+        }
+        .about_me {
+            display: none;
+        }
+        .about_text {
+            display: none;
+        }
+        .view_more1 {
+            display: none;
+        }
+        .about_me_sp {
+            display: block;
+            width: 100px;
+            margin: 0 auto;
+            margin-bottom: 25px;
+            margin-top: -30px;
+        }
+        .about_text_sp {
+            display: block;
+            font-size: 12px;
+            line-height: 1.5;
+
+        }
+        .view_more1_sp {
+            justify-content: flex-end;
+            font-size: 10px;
+            color: $sky1-color;
+            margin-top: 35px;
+            display: flex;
+            align-items: center; /* 垂直中心 */
+            // justify-content: center; /* 水平中心 */
+        &::after {
+            border-top: 0.5px solid $sky1-color;
+            content: "";
+            width: 120px; /* 線の長さ */
+        }  
+        &::after {
+            margin-left: 12px; /* 文字の左隣 */
+        }
+        }
+        .about_sky {
+            width: 65px;
+        }
+        .about_clock {
+            width: 50px;
+            padding-left: 10px;
+            margin-top: 0;
+        }
+    }
+
     .works_top {
     margin-top: 215px;
     display: flex;
     text-align: right;
     justify-content: flex-end;
     // margin: 0 0 0 auto;
+    }
     .title_sub2 {
         color: $sky2-color;
         padding-top: 10px;
         padding-right: 6px;
         font-size: 20px;
-    }
     }
     .works_content {
         display: block;
@@ -228,7 +372,7 @@ ul li:last-child {
     }
     .works_clock {
         width: 80px;
-        padding-right: 15px;
+        padding-right: 10px;
         margin-top: -15px;
     }
    
@@ -239,13 +383,13 @@ ul li:last-child {
         max-width: 1000px;
         margin: 0 auto;
         padding: 0 5%;
+        margin-top: 20px;
     }
     .myworks_content_site {
         width: 30%;
         height: 300px;
         background: #dcdde7;
         margin-bottom: 47px;
-        margin-top: 20px;
             }
     .myworks_content_banner {
         img {width: 250px;
@@ -273,7 +417,54 @@ ul li:last-child {
         margin-left: 12px; /* 文字の左隣 */
     }
     }
-    // view moreを右端にできない
+
+    @media screen and (max-width: 767px) {
+        .works_sky {
+            width: 63px;
+        }
+        .works_clock {
+            width: 50px;
+        }
+        .works_content {
+            width: 80%;
+            margin-top: 0;
+            padding-right: 18px;
+            h2 {
+                font-size: 20px;
+            }
+        }
+        .title_sub2 {
+            font-size: 15px;
+            padding-top: 6px;
+           }
+        .works_text {
+            font-size: 12px;
+            line-height: 1.5;
+            padding-top: 20px;
+        }
+        .myworks {
+            display: block;
+            margin-top: 70px;
+        }
+        .myworks_content_site {
+            width: 100%;
+            height: 180px;
+            margin-bottom: 40px;
+        }
+        .myworks_content_banner {
+            display: none;
+        }
+        .view_more2 {
+            font-size: 10px;
+            justify-content: flex-end;
+            &::after {
+                border-top: 0.5px solid $sky1-color;
+                content: "";
+                width: 120px; /* 線の長さ */
+            }  
+
+        }
+    }
 
     #service {
         margin-top: 150px;
@@ -349,6 +540,81 @@ ul li:last-child {
                 width: 162px;
             }
         }
+        @media screen and (max-width: 767px) {
+            .service_sky {
+                width: 63px;
+            }
+            .service_clock {
+                width: 50px;
+                margin: 0;
+                padding-left: 10px;
+            }
+            .service_top {
+                h2 {
+                    font-size: 20px;
+                }
+                p {
+                    font-size: 15px;
+                }
+            }
+            .service_head {
+                width: 80%;
+                padding-left: 18px;
+                padding-top: 40px;
+            }
+            .service_content {
+                display: block;
+                padding-top: 75px;
+                max-width: 250px;
+                h3 {
+                    font-size: 15px;
+                    padding-top: 30px;
+                    border-bottom: 1px solid #171c61;
+                    padding-bottom: 8px;
+                    margin-bottom: 10px;
+                }
+                p {
+                    font-size: 12px;
+                    line-height: 1.83;
+                    font-feature-settings: "palt";
+                }
+            }
+            .service_design {
+                margin: 0 auto;
+                width: 100%;
+                padding-bottom: 60px;
+                img {
+                    width: 130px;
+                    // 画像を中央に寄せたい
+                }
+            }
+            .service_cording {
+                margin: 0 auto;
+                width: 100%;
+                padding-bottom: 60px;
+                img {
+                    width: 148px;
+                    // 画像を中央に寄せたい
+                }
+            }
+            .service_writing {
+                margin: 0 auto;
+                width: 100%;
+                padding-bottom: 60px;
+                img {
+                    width: 130px;
+                    // 画像を中央に寄せたい
+                }
+            }
+            .service_others {
+                margin: 0 auto;
+                width: 100%;
+                img {
+                    width: 125px;
+                    // 画像を中央に寄せたい
+                }
+            }
+        }
 
         #contact {
             margin-top: 110px;
@@ -364,6 +630,7 @@ ul li:last-child {
         .contact_head {
             display: block;
             margin: 0 auto;
+            padding-left: 15%;
             p {
                 color: $sky4-color;
                 padding-top: 10px;
@@ -390,4 +657,37 @@ ul li:last-child {
             color: $main-color;
             background-color: #171c61;
             margin-top: 95px;
+        }
+
+        @media screen and (max-width: 767px) {
+            .contact_clock {
+                width: 50px;
+                padding-bottom: 20px;
+            }
+            .contact_head {
+                h2 {
+                    font-size: 20px;
+                }
+                p {
+                    font-size: 15px;
+                    padding-top: 10px;
+                }
+            }
+            .contact_sky {
+                width: 63px;
+                margin: 0;
+            }
+            .contact_text {
+                padding-top: 30px;
+                font-size: 12px;
+                line-height: 1.7;
+                margin-bottom: 40px;
+                font-feature-settings: "palt";
+            }
+            .contact_button {
+                width: 250px;
+                height: 50px;
+                font-size: 15px;
+                margin: 0 auto;
+            }
         }
