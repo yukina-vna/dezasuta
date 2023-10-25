@@ -6,32 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>portfolio|Nacht Design</title>
     <meta name="description" content="細貝柚希奈のポートフォリオサイトです。">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/common.css">
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 
 <body>
+    <!-- <div id="loading">
+        <div class="loading_sun"><img src="images/loading_sun@2x.png" alt=""></div>
+        <p>Loading...</p>
+        <div id="loading-screen"></div>
+    </div> -->
+
     <header id="top">
-        <h1 class="header_logo_fv"><img src="images/logo.svg" alt="Nacht Design"></h1>
+        <h1 class="header_logo_fv"><a href="#top"><img src="images/logo.svg" alt="Nacht Design"></a></h1>
 
         <nav class="header_menu_pc">
             <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#concept">concept</a></li>
-                <li><a href="#aboutme">about me</a></li>
-                <li><a href="works">works</a></li>
+                <li><a href="#top">home</a></li>
+                <li><a href="concept/index.html">concept</a></li>
+                <li><a href="#about">about me</a></li>
+                <li><a href="#works">works</a></li>
                 <li><a href="#service">service</a></li>
-                <li><a href="#contact"></a>contact</li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </nav>
+        <div class="sp_btn">
+            <span></span>
+            <span></span>
+            <p>menu</p>
+        </div>
+        <nav class="sp_nav">
+            <ul>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../concept/index.html">concept</a></li>
+                <li><a href="../about/index.html">about me</a></li>
+                <li><a href="../works/index.html">works</a></li>
+                <li><a href="../contact/index.html"></a>contact</li>
             </ul>
         </nav>
     </header>
 
     <section id="mv">
 
-        <div class="mv_main"><img src="images/main.png" alt="メインビジュアル"></div>
-        <div class="mv_main_sp"><img src="images/メインビジュアル_sp@2x.png" alt="メインビジュアル"></div>
+        <h2 class="mv_main"><img src="images/main.png" alt="メインビジュアル"></h2>
+        <div class="mv_main_sp"><img src="images/main_sp@2x.png" alt="メインビジュアル"></div>
 
         <div class="mv_foot1"><img src="images/足跡1.png" alt="足跡1"></div>
         <div class="mv_foot2"><img src="images/足跡2.png" alt="足跡1"></div>
@@ -41,14 +61,14 @@
         <div class="mv_text">心に響く、<br>かけがえのないデザインを。</div>
     </section>
 
-    <section id="concept">
-        <div class="concept_text">暗くて長い夜。でも空には優しい光があふれています。
+    <div id="concept">
+        <h2 class="concept_text">暗くて長い夜。でも空には優しい光があふれています。
             <br>そんな光のように、みなさまの一歩先を照らせますように。<br><br>「実現したいこと」と丁寧に向き合い、<br>
             想いを届けていくお手伝いをしたいと考えています。
-        </div>
+        </h2>
 
         <div class="concept_scroll"><img src="images/scroll.png" alt="scroll"></div>
-    </section>
+    </div>
 
 
     <section id="about">
@@ -181,30 +201,32 @@
                     <br>ご依頼やご相談等、お気軽にお問い合わせください。
                     <br>内容を確認後、48時間以内にお返事いたします。
                 </div>
-                <div class="contact_button"><a href="">お問い合わせはこちら</a></div>
+                <a href="contact/index.html" class="btn">
+                    <div class="btn-inner">お問い合わせはこちら</div>
+                </a>
             </div>
             <div class="contact_sky"><img src="images/sky4.png" alt="水縹の夜空"></div>
         </div>
 
     </section>
 
-    <section id="footer">
-        <div class="footer_sky"><img src="images/footer.png" alt="footer"></div>
-        <div class="footer_sky_sp"><img src="images/footer_sp@2x.png" alt="footer"></div>
+    <div id="footer">
+        <!-- <div class="footer_sky"><img src="images/footer.png" alt="footer"></div>
+        <div class="footer_sky_sp"><img src="images/footer_sp@2x.png" alt="footer"></div> -->
         <div class="footer_menu">
             <ul>
-                <li><a href="#home">home</a></li>
+                <li><a href="#top">home</a></li>
                 <li><a href="#concept">concept</a></li>
                 <li><a href="#aboutme">about me</a></li>
                 <li><a href="works">works</a></li>
                 <li><a href="#service">service</a></li>
-                <li><a href="#contact"></a>contact</li>
+                <li><a href="#contact">contact</a></li>
             </ul>
         </div>
         <small>&copy;Nacht Design</small>
-    </section>
+    </div>
 
-
+    <script src="js/script.js"></script>
 
 </body>
 

@@ -6,6 +6,31 @@ $sky3-color: #191c32;
 $sky4-color: #7ec7d8;
 
 // スクロールできるのはなぜ？？：解決 リセットCSS更新
+
+#loading {
+    background-color: #fffddf;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    display: grid;
+    place-items: center;
+}
+.loading_sun {
+    width: 200px;
+}
+#loading-screen {
+    background-color: #171c61;
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    translate: 0 100vh;
+}
+#loading p {
+    font-size: 2rem;
+}
+
+
+
 body {
     background-color: $base-color;
 }
@@ -34,6 +59,9 @@ h2 {
     }
     .header_menu_pc {
         display: none;
+    }
+    .sp_btn {
+        top: 8%;
     }
 }
 
@@ -307,6 +335,7 @@ ul li:last-child {
             margin-top: -30px;
         }
         .about_text_sp {
+            font-feature-settings: "palt";
             display: block;
             font-size: 12px;
             line-height: 1.5;
@@ -392,12 +421,22 @@ ul li:last-child {
         margin-bottom: 47px;
             }
     .myworks_content_banner {
-        img {width: 250px;
+        img {
+            width: 250px;
         }
         width: 30%;
-        height: 300px;
+        // height: 300px;
         background: #dcdde7;
     }
+    .myworks_content_site,
+    .myworks_content_banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
     // 夜空の写真と作品の右端を揃えたい
     // 資格の真ん中に作品の写真を配置したい
 
@@ -448,13 +487,14 @@ ul li:last-child {
         }
         .myworks_content_site {
             width: 100%;
-            height: 180px;
+            height: 200px;
             margin-bottom: 40px;
         }
         .myworks_content_banner {
             display: none;
         }
         .view_more2 {
+            padding: 0;
             font-size: 10px;
             justify-content: flex-end;
             &::after {
@@ -503,6 +543,9 @@ ul li:last-child {
                 font-weight: normal;
                 font-size: 20px;
                 padding-top: 40px;
+                border-bottom: 1px #171c61 solid;
+                padding-bottom: 8px;
+                margin-bottom: 14px;
             }
             p {
                 font-size: 15px;
@@ -583,6 +626,10 @@ ul li:last-child {
                 margin: 0 auto;
                 width: 100%;
                 padding-bottom: 60px;
+                div {
+                    padding-right: 22px;
+                    text-align: center;
+                }
                 img {
                     width: 130px;
                     // 画像を中央に寄せたい
@@ -592,6 +639,10 @@ ul li:last-child {
                 margin: 0 auto;
                 width: 100%;
                 padding-bottom: 60px;
+                div {
+                    text-align: center;
+                    padding-right: 18px;
+                }
                 img {
                     width: 148px;
                     // 画像を中央に寄せたい
@@ -601,6 +652,10 @@ ul li:last-child {
                 margin: 0 auto;
                 width: 100%;
                 padding-bottom: 60px;
+                div {
+                    text-align: center;
+                    padding-right: 20px;
+                }
                 img {
                     width: 130px;
                     // 画像を中央に寄せたい
@@ -609,6 +664,10 @@ ul li:last-child {
             .service_others {
                 margin: 0 auto;
                 width: 100%;
+                div {
+                    text-align: center;
+                    padding-right: 20px;
+                }
                 img {
                     width: 125px;
                     // 画像を中央に寄せたい
@@ -648,16 +707,45 @@ ul li:last-child {
             font-size: 15px;
             line-height: 1.4;
             padding-top: 82px;
+            margin-bottom: 95px;
         }
-        .contact_button {
-            width: 400px;
-            height: 60px;
-            text-align: center;
-            font-size: 18px;
-            color: $main-color;
-            background-color: #171c61;
-            margin-top: 95px;
-        }
+        // .btn {
+        //     display: block;
+        //     width: 400px;
+        //     margin: 0 auto;
+        //     padding: 5px 10px;
+        //     box-sizing: border-box;
+        //     background: #171c61;
+        //   }
+        //   .btn-inner {
+        //     position: relative;
+        //     display: flex;
+        //     justify-content: center;
+        //     align-items: center;
+        //     padding: 15px 0;
+        //     border-top: 1px solid #fff;
+        //     border-bottom: 1px solid #fff;
+        //     color: #fff;
+        //     font-size: 18px;
+        //     line-height: 1;
+        //   }
+        //   .btn-inner::before,
+        //   .btn-inner::after {
+        //     content: "";
+        //     position: absolute;
+        //     top: 50%;
+        //     transform: translateY(-50%);
+        //     width: 5px;
+        //     height: 5px;
+        //     border-radius: 99rem;
+        //     background: #fff;
+        //   }
+        //   .btn-inner::before {
+        //     left: 0;
+        //   }
+        //   .btn-inner::after {
+        //     right: 0;
+        //   }
 
         @media screen and (max-width: 767px) {
             .contact_clock {
@@ -690,4 +778,11 @@ ul li:last-child {
                 font-size: 15px;
                 margin: 0 auto;
             }
+            // .btn {
+            //     width: 250px;
+            // }
+            // .btn-inner {
+            //     font-size: 15px;
+            //     padding: 10px 0;
+            // }
         }

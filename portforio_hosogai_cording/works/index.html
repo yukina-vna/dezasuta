@@ -6,40 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>portfolio|works</title>
     <meta name="description" content="ポートフォリオのworksページです。">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="../css/common.css">
-    <script src="../js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 </head>
 
 <body>
-    <section id="header">
-        <div class="header_sky"><img src="../images/headerのコピー.png" alt="header"></div>
-        <div class="header_sky_sp"><img src="../images/header_sp@2x.png" alt="header"></div>
-        <div class="header_logo"><img src="../images/logo.svg" alt="logo"></div>
-        <nav class="header_menu_pc">
-            <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#concept">concept</a></li>
-                <li><a href="#aboutme">about me</a></li>
-                <li><a href="works">works</a></li>
-                <li><a href="#service">service</a></li>
-                <li><a href="#contact"></a>contact</li>
-            </ul>
-        </nav>
-        <div class="sp_btn">
-            <span></span>
+
+    <div id="header">
+        <img class="header_bg" src="../images/header.png" alt="header">
+        <div class="header_inner">
+            <div class="header_logo"><a href="../index.html"><img src="../images/logo.svg" alt="logo"></a></div>
+            <nav class="header_menu_pc">
+                <ul>
+                    <li><a href="../index.html">home</a></li>
+                    <li><a href="../concept/index.html">concept</a></li>
+                    <li><a href="../about/index.html">about me</a></li>
+                    <li><a href="../works/index.html">works</a></li>
+                    <li><a href="../contact/index.html">contact</a></li>
+                </ul>
+            </nav>
+            <div class="sp_btn">
+                <span></span>
+            </div>
+            <nav class="sp_nav">
+                <ul>
+                    <li><a href="../index.html">home</a></li>
+                    <li><a href="../concept/index.html">concept</a></li>
+                    <li><a href="../about/index.html">about me</a></li>
+                    <li><a href="../works/index.html">works</a></li>
+                    <li><a href="../contact/index.html">contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav class="sp_nav">
-            <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#concept">concept</a></li>
-                <li><a href="#aboutme">about me</a></li>
-                <li><a href="works">works</a></li>
-                <li><a href="#service">service</a></li>
-                <li><a href="#contact"></a>contact</li>
-            </ul>
-        </nav>
-    </section>
+    </div>
 
     <section id="works_title">
         <div class="works_top">
@@ -53,14 +54,14 @@
         <div class="works_desc_sp">デザインをタップすると詳細ページに移動します。</div>
     </section>
 
-    <section class="works_content">
+    <div class="works_content">
         <div class="works_site">
             <p>web site | 2023.08 <br>美容院「LIFE」LP</p>
             <div class="works_img"><img src="images/works_site1.png" alt=""></div>
         </div>
         <div class="works_site">
             <p>web site | 2023.08 <br>デザインカフェ HP</p>
-            <div class="works_img"><img src="images/works_site2.png" alt=""></div>
+            <div class="works_img"><a href="../works/work1.html"><img src="images/works_site2.png" alt=""></a></div>
         </div>
         <div class="works_banner">
             <p>web banner | 2023.08 <br>新バーガー告知バナー</p>
@@ -86,30 +87,37 @@
             <p>web banner | 2023.01 <br>Webメディアアイキャッチ</p>
             <div class="works_img"><img src="images/works_banner5.png" alt=""></div>
         </div>
-    </section>
-
-    <div class="bottom_circle">
-        <div><img src="../images/bottom_circle1.png" alt=""></div>
-        <div><img src="../images/bottom_circle2.png" alt=""></div>
-        <div><img src="../images/bottom_circle3.png" alt=""></div>
     </div>
 
-    <section id="footer">
-        <div class="footer_sky"><img src="../images/footer.png" alt="footer"></div>
-        <div class="footer_sky_sp"><img src="../images/footer_sp@2x.png" alt="footer"></div>
+    <div class="content_detail_pagination cdp" actpage="1">
+        <a href="#!-1" class="cdp_i">prev</a>
+        <a href="#!1" class="cdp_i">1</a>
+        <a href="#!2" class="cdp_i">2</a>
+        <a href="#!3" class="cdp_i">3</a>
+        <a href="#!4" class="cdp_i">4</a>
+        <a href="#!5" class="cdp_i">5</a>
+        <a href="#!+1" class="cdp_i">next</a>
+    </div>
+
+    <div class="bottom_circle">
+        <div class="bottom1"><img src="../images/bottom_circle1@2x.png" alt=""></div>
+        <div class="bottom2"><img src="../images/bottom_circle2@2x.png" alt=""></div>
+        <div class="bottom3"><img src="../images/bottom_circle3@2x.png" alt=""></div>
+    </div>
+
+    <div id="footer">
         <div class="footer_menu">
             <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#concept">concept</a></li>
-                <li><a href="#aboutme">about me</a></li>
-                <li><a href="works">works</a></li>
-                <li><a href="#service">service</a></li>
-                <li><a href="#contact"></a>contact</li>
+                <li><a href="../index.html">home</a></li>
+                <li><a href="../concept/index.html">concept</a></li>
+                <li><a href="../about/index.html">about me</a></li>
+                <li><a href="../works/index.html">works</a></li>
+                <li><a href="../contact/index.html">contact</a></li>
             </ul>
         </div>
         <small>&copy;Nacht Design</small>
-    </section>
-
+    </div>
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

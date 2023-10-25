@@ -50,10 +50,18 @@ body {
 a:hover {
     opacity: 0.5;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 #footer {
     margin-top: 120px;
     position: relative;
+    /* 以下教えてもらったコード */
+    padding: 65px 0;
+    background-image: url(../images/footer.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .footer_sky_sp {
@@ -61,19 +69,20 @@ a:hover {
 }
 
 .footer_menu {
-    width: 810px;
-    position: absolute;
+    max-width: 810px;
+    margin: 0 auto 85px;
+    /* position: absolute;
     z-index: 120;
     top: 22%;
-    left: 20%;
+    left: 20%; */
     /* 真ん中に寄せたい */
 }
-.footer_sky img {
-    /* margin-right: calc(50% - 50vw);
+/* .footer_sky img { */
+/* margin-right: calc(50% - 50vw);
     margin-left: calc(50% - 50vw); */
-    /* 画面を広げると画像が切れてしまう */
-    width: 100vw;
-}
+/* 画面を広げると画像が切れてしまう */
+/* width: 100vw;
+} */
 .footer img {
     width: 100%;
     height: auto;
@@ -88,56 +97,94 @@ a:hover {
     color: #fffddf;
 }
 #footer small {
-    position: absolute;
+    /* position: absolute;
     bottom: 20%;
-    left: 50%;
+    left: 50%; */
     font-size: 12px;
     color: #fffddf;
+    display: block;
+    text-align: center;
 }
 @media screen and (max-width: 767px) {
-    .footer_sky {
-        display: none;
-    }
-    .footer_sky_sp {
-        display: block;
+    #footer {
+        background-image: url(../images/footer_sp@2x.png);
     }
     .footer_menu {
-        width: 100%;
-        top: 12%;
+        max-width: 140px;
+        margin: 0 auto 50px;
     }
     .footer_menu ul {
         display: block;
         text-align: center;
     }
     .footer_menu li {
-        padding-bottom: 6%;
+        padding-bottom: 28px;
     }
     #footer small {
         font-size: 8px;
-        bottom: 5%;
     }
 }
 
 #header {
     position: relative;
+    z-index: 999;
+    top: 0;
+    left: 0;
 }
+
+#header.scroll {
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    animation: anime 0.7s forwards;
+    .header_logo {
+        width: 60px;
+    }
+}
+@keyframes anime {
+    from {
+        opacity: 0;
+        transform: translateY(-170px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .header_logo {
     width: 80px;
-    position: absolute;
+    /* position: absolute;
     top: 20%;
-    left: 10%;
+    left: 10%; */
 }
-.header_sky img {
+.header_bg {
+    position: absolute;
+    object-fit: cover;
+    /* 画面幅に応じてトリミング */
+    width: 100%;
+    height: 100%;
+}
+.header_inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+/* .header_sky img {
     width: 100vw;
     height: auto;
-    /* 画面を縮めていくと高さが足りなくなってしまう */
-}
-.header_menu_pc {
+    画面を縮めていくと高さが足りなくなってしまう */
+/* } */
+/* .header_menu_pc {
     position: absolute;
     top: 50px;
     right: 5%;
     z-index: 200;
-}
+} */
 
 .header_menu_pc ul {
     display: flex;
@@ -150,30 +197,35 @@ a:hover {
 .header_menu_pc ul li:last-child {
     padding-right: 0;
 }
-.header_sky_sp {
+/* .header_sky_sp {
     display: none;
-}
+} */
 .sp_btn,
 .sp_nav {
     display: none;
 }
 @media screen and (max-width: 767px) {
     .header_logo {
-        width: 37px;
-        left: 5%;
+        width: 50px;
     }
-    .header_sky {
+    .header_inner {
+        height: 50px;
+    }
+
+    /* .header_sky {
         display: none;
     }
     .header_sky_sp {
         display: block;
-    }
+    } */
     .header_menu_pc {
         display: none;
     }
     .sp_btn {
         position: absolute;
-        top: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        /* 上下中央に配置 */
         right: 25px;
         display: block;
         height: 23px;
@@ -187,7 +239,7 @@ a:hover {
         width: 33px;
         height: 3px;
         border-radius: 2px;
-        background: #fffddf;
+        background: #fffeef;
         transition: 0.3s;
     }
 
@@ -228,12 +280,12 @@ a:hover {
         height: 100vh;
         background: #171c61;
         z-index: 1;
+        padding-left: 10%;
     }
     .sp_nav ul {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
         height: 100%;
     }
     .sp_nav ul li {
@@ -251,4 +303,72 @@ a:hover {
 }
 .bottom_circle div:first-child {
     padding-top: 0;
+}
+.bottom1 img {
+    width: 10px;
+}
+.bottom2 img {
+    width: 20px;
+}
+.bottom3 img {
+    width: 30px;
+}
+
+@media screen and (max-width: 767px) {
+    .bottom1 img {
+        width: 8px;
+    }
+    .bottom2 img {
+        width: 15px;
+    }
+    .bottom3 img {
+        width: 25px;
+    }
+}
+
+.btn {
+    display: block;
+    width: 400px;
+    margin: 0 auto;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    background: #171c61;
+}
+.btn-inner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+}
+.btn-inner::before,
+.btn-inner::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 99rem;
+    background: #fff;
+}
+.btn-inner::before {
+    left: 0;
+}
+.btn-inner::after {
+    right: 0;
+}
+@media screen and (max-width: 767px) {
+    .btn {
+        width: 250px;
+    }
+    .btn-inner {
+        font-size: 15px;
+        padding: 10px 0;
+    }
 }
