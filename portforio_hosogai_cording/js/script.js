@@ -60,6 +60,10 @@ const buttonOpen_sp1 = document.getElementById('modalOpen_sp1');
 const modal_sp1 = document.getElementById('easyModal_sp1');
 const buttonClose_sp1 = document.getElementsByClassName('modalClose_sp')[0];
 
+const buttonOpen_sp2 = document.getElementById('modalOpen_sp2');
+const modal_sp2 = document.getElementById('easyModal_sp2');
+const buttonClose_sp2 = document.getElementsByClassName('modalClose_sp')[1];
+
 // ボタンがクリックされた時
 buttonOpen_sp1.addEventListener('click', modalOpen_sp1);
 function modalOpen_sp1() {
@@ -68,8 +72,10 @@ function modalOpen_sp1() {
 
 // バツ印がクリックされた時
 buttonClose_sp1.addEventListener('click', modalClose_sp);
+buttonClose_sp2.addEventListener('click', modalClose_sp);
 function modalClose_sp() {
   modal_sp1.style.display = 'none';
+  modal_sp2.style.display = 'none';
 }
 
 // モーダルコンテンツ以外がクリックされた時
@@ -80,20 +86,10 @@ function outsideClose(e) {
   }
 }
 
-const buttonOpen_sp2 = document.getElementById('modalOpen_sp2');
-const modal_sp2 = document.getElementById('easyModal_sp2');
-const buttonClose_sp2 = document.getElementsByClassName('modalClose_sp')[0];
-
 // ボタンがクリックされた時
 buttonOpen_sp2.addEventListener('click', modalOpen_sp2);
 function modalOpen_sp2() {
   modal_sp2.style.display = 'block';
-}
-
-// バツ印がクリックされた時
-buttonClose_sp2.addEventListener('click', modalClose_sp);
-function modalClose_sp() {
-  modal_sp2.style.display = 'none';
 }
 
 // モーダルコンテンツ以外がクリックされた時
@@ -133,58 +129,12 @@ $(function () {
   });
 });
 
+// ヘッダー カレント表示
+const headerNavLink = document.querySelectorAll('.js-header');
 
-/*
-ローディングから画面遷移
-================================================ */
-const loadingAreaGrey = document.querySelector('#loading');
-const loadingAreaGreen = document.querySelector('#loading-screen');
-const loadingText = document.querySelector('#loading p');
-
-window.addEventListener('load', () => {
-  // ローディング中（グレースクリーン）
-  loadingAreaGrey.animate(
-    {
-      opacity: [1, 0],
-      visibility: 'hidden',
-    },
-    {
-      duration: 2000,
-      delay: 1200,
-      easing: 'ease',
-      fill: 'forwards',
-    }
-  );
-
-  // ローディング中（薄緑スクリーン）
-  loadingAreaGreen.animate(
-    {
-      translate: ['0 100vh', '0 0', '0 -100vh']
-    },
-    {
-      duration: 2000,
-      delay: 800,
-      easing: 'ease',
-      fill: 'forwards',
-    }
-  );  
-
-  // ローディング中テキスト
-  loadingText.animate(
-    [
-      {
-        opacity: 1,
-        offset: .8  //80%
-      },
-      {
-        opacity: 0,
-        offset: 1  //100%
-      },
-    ], 
-    {
-      duration: 1200,
-      easing: 'ease',
-      fill: 'forwards',
-    }
-  );
+headerNavLink.forEach((targetLink) => {
+  if (targetLink.href === location.href) {
+    targetLink.parentElement.classList.add('is-current');
+  }
 });
+

@@ -243,6 +243,8 @@
   justify-content: left;
   max-width: 1000px;
   margin: 0 auto;
+  align-items: flex-start;
+  padding-right: 5%;
 }
 
 .favorite_text2 {
@@ -265,7 +267,6 @@
   padding-top: 220px;
   width: 100%;
   padding-left: 5%;
-  padding-right: 5%;
 }
 
 .picture_text {
@@ -274,7 +275,7 @@
 }
 
 .favorite_works {
-  width: 300px;
+  width: 30%;
   background: #fffef5;
   z-index: 100;
 }
@@ -507,4 +508,7 @@
     line-height: 2;
     font-feature-settings: "palt";
   }
+}
+#footer {
+  margin-top: 120px;
 }/*# sourceMappingURL=style.css.map */

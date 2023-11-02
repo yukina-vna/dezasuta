@@ -72,7 +72,7 @@
     margin-bottom: 65px;
 }
 
-form div {
+form div:not(:last-child) {
     margin-bottom: 60px;
 }
 
@@ -182,4 +182,10 @@ textarea {
     box-sizing: border-box;
     background: #171c61;
 }
+}
+#footer {
+    margin-top: 120px;
+}
+.bottom_circle {
+    margin-top: 85px;
 }

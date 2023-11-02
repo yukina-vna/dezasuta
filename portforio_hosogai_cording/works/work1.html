@@ -8,6 +8,7 @@
     <meta name="description" content="制作実績詳細ページです。">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="../js/script.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
@@ -18,11 +19,11 @@
             <div class="header_logo"><a href="../index.html"><img src="../images/logo.svg" alt="logo"></a></div>
             <nav class="header_menu_pc">
                 <ul>
-                    <li><a href="../index.html">home</a></li>
-                    <li><a href="../concept/index.html">concept</a></li>
-                    <li><a href="../about/index.html">about me</a></li>
-                    <li><a href="../works/index.html">works</a></li>
-                    <li><a href="../contact/index.html">contact</a></li>
+                    <li><a class="js-header" href="../index.html">home</a></li>
+                    <li><a class="js-header" href="../concept/index.html">concept</a></li>
+                    <li><a class="js-header" href="../about/index.html">about me</a></li>
+                    <li><a class="js-header" href="../works/index.html">works</a></li>
+                    <li><a class="js-header" href="../contact/index.html">contact</a></li>
                 </ul>
             </nav>
             <div class="sp_btn">
@@ -100,9 +101,38 @@
         </div>
     </div>
 
-    <div class="detail_text">
-        <div class="detail_list">
-            <ul>
+    <dl class="detail_text">
+        <div>
+            <dt>概要</dt>
+            <dd>コーディング学習のために作成した架空カフェサイト</dd>
+        </div>
+
+        <div>
+            <dt>ターゲット</dt>
+            <dd>幅広い年代の男女。ナチュラルな雰囲気のカフェを好む人。</dd>
+        </div>
+
+        <div>
+            <dt>コンセプト</dt>
+            <dd>カフェの情報・雰囲気をわかりやすく伝える。幅広い年代が使いやすいサイト。</dd>
+        </div>
+
+        <div>
+            <dt>制作範囲</dt>
+            <dd>コーディング</dd>
+        </div>
+
+        <div>
+            <dt>使用言語</dt>
+            <dd>HTML / CSS / JavaScript</dd>
+        </div>
+
+        <div>
+            <dt>制作期間</dt>
+            <dd>2週間</dd>
+        </div>
+        <!-- <div class="detail_list"> -->
+        <!-- <ul>
                 <li>概要</li>
                 <li>ターゲット</li>
                 <li>コンセプト</li>
@@ -120,8 +150,8 @@
                 <li>HTML / CSS / JavaScript</li>
                 <li>2週間</li>
             </ul>
-        </div>
-    </div>
+        </div> -->
+    </dl>
     <div class="detail_message">カフェのナチュラルで過ごしやすい、広々とした雰囲気を最大限表現できるよう意識しました。
         幅広い年代の方に見てもらいたいサイトだったので、メニューやボタンなどは操作性が明快になるようコーディングしました。</div>
     <div class="detail_back">back</div>
@@ -144,7 +174,6 @@
         </div>
         <small>&copy;Nacht Design</small>
     </div>
-    <script src="../js/script.js"></script>
 </body>
 
 </html>

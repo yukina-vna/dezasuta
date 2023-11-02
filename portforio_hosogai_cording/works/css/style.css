@@ -92,7 +92,7 @@
 
 .works_img {
   width: 400px;
-  height: 300px;
+  aspect-ratio: 1.3;
   background: #dcdde7;
   margin-bottom: 60px;
   display: flex;
@@ -128,10 +128,6 @@
   margin-bottom: 120px;
 }
 
-.works_banner img {
-  max-width: 300px;
-}
-
 .works_detail {
   max-width: 1000px;
   margin: 0 auto;
@@ -161,32 +157,45 @@
   width: 1000px;
 }
 
-.detail_text {
-  display: flex;
-  padding-top: 115px;
-  padding-left: 5%;
-  padding-right: 5%;
+dl.detail_text {
+  font-size: 18px;
   max-width: 800px;
   margin: 0 auto;
-  justify-content: center;
+  padding-top: 110px;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
-.detail_list li,
-.detail_content li {
-  font-size: 18px;
+dl.detail_text div {
+  position: relative;
+  display: flex;
+  align-items: center;
   padding-bottom: 12px;
-  padding-top: 12px;
-  border-bottom: 1px #171c61 dotted;
-}
-.detail_list li:first-child,
-.detail_content li:first-child {
-  padding-top: 0;
+  margin-bottom: 10px;
+  border-bottom: 1px dotted #171c61;
 }
 
-.detail_content {
-  margin-left: 40px;
+.detail_text dt {
+  width: 15%;
+}
+.detail_text dd {
+  width: 85%;
 }
 
+@media screen and (max-width: 767px) {
+  .detail_text dt {
+    font-size: 13px;
+    width: 25%;
+  }
+  .detail_text dd {
+    font-size: 12px;
+    line-height: 1.3;
+    width: 75%;
+  }
+  dl.detail_text {
+    padding-top: 48px;
+  }
+}
 .detail_message {
   max-width: 665px;
   margin: 0 auto;
@@ -277,19 +286,6 @@
     padding: 10px;
     margin-bottom: 22px;
   }
-  .detail_text {
-    padding-top: 48px;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  .detail_list li {
-    padding-bottom: 9px;
-    font-size: 13px;
-  }
-  .detail_content li {
-    font-size: 12px;
-    line-height: 1.33;
-  }
   .detail_message {
     font-size: 12px;
     line-height: 1.83;
@@ -365,8 +361,8 @@
 
 .modal-content,
 .modal-content_sp {
-  background-color: rgba(255, 253, 223, 0.6);
-  margin: 20% auto;
+  background-color: rgba(255, 253, 223, 0.7);
+  margin: 10% auto;
   width: 80%;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
   animation-name: modalopen;
@@ -444,6 +440,12 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 767px) {
+  .modal-content,
+  .modal-content_sp {
+    margin: 30% auto;
+  }
+}
 .cdp {
   position: relative;
   text-align: center;

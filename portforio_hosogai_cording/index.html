@@ -8,6 +8,7 @@
     <meta name="description" content="細貝柚希奈のポートフォリオサイトです。">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
@@ -26,16 +27,13 @@
             <ul>
                 <li><a href="#top">home</a></li>
                 <li><a href="concept/index.html">concept</a></li>
-                <li><a href="#about">about me</a></li>
-                <li><a href="#works">works</a></li>
-                <li><a href="#service">service</a></li>
-                <li><a href="#contact">contact</a></li>
+                <li><a href="./about/index.html">about me</a></li>
+                <li><a href="./works/index.html">works</a></li>
+                <li><a href="./contact/index.html">contact</a></li>
             </ul>
         </nav>
         <div class="sp_btn">
             <span></span>
-            <span></span>
-            <p>menu</p>
         </div>
         <nav class="sp_nav">
             <ul>
@@ -86,8 +84,8 @@
                     <br>大学で学ぶ心理学を生かして、ロジカルで戦略的なデザインを作ることを心がけております。<br><br>
                     課題や悩みと向き合い、歩みを進めるお手伝いをさせていただきます。
                 </div>
-                <div class="view_more1">
-                    view more
+                <div class="view_more1"><a href="./about/index.html">
+                        view more</a>
                 </div>
             </div>
             <div class="about_me"><img src="images/aboutme.png" alt="自分の写真"></div>
@@ -98,23 +96,23 @@
                 <br>大学で学ぶ心理学を生かして、ロジカルで戦略的なデザインを作ることを心がけております。<br><br>
                 課題や悩みと向き合い、歩みを進めるお手伝いをさせていただきます。
             </div>
-            <div class="view_more1_sp">
-                view more
+            <div class="view_more1_sp"><a href="./about/index.html">view more</a>
             </div>
         </div>
     </section>
 
     <section id="works">
         <div class="works_top">
-            <div class="works_circle">
-                <div class="works_circle1"><img src="images/works_circle1.png" alt=""></div>
-                <div class="works_circle2"><img src="images/works_circle2.png" alt=""></div>
-                <div class="works_circle3"><img src="images/works_circle_3.png" alt=""></div>
-            </div>
-
             <div class="works_content">
                 <div class="works_head">
-                    <div class="works_clock"><img src="images/clock_2.svg" alt="紺桔梗の時計"></div>
+                    <div class="works_clock">
+                        <div class="works_circle">
+                            <div class="circle1"><img src="images/works_circle1.png" alt=""></div>
+                            <div class="circle2"><img src="images/works_circle2.png" alt=""></div>
+                            <div class="circle3"><img src="images/works_circle_3.png" alt=""></div>
+                        </div>
+                        <img src="images/clock_2.svg" alt="紺桔梗の時計">
+                    </div>
                     <div class="works_title">
                         <h2>つくったもの</h2>
                         <p class="title_sub2">My works</p>
@@ -133,17 +131,12 @@
             <div class="myworks_content_banner"><img src="images/works5.png" alt=""></div>
             <div class="myworks_content_banner"><img src="images/works6.png" alt=""></div>
             <div class="view_more2">
-                view more
+                <a href="./works/index.html">view more</a>
             </div>
         </div>
     </section>
 
     <section id="service">
-        <div class="service_circle">
-            <div class="service_circle1"><img src="images/service_circle1.png" alt=""></div>
-            <div class="service_circle2"><img src="images/service_circle2.png" alt=""></div>
-            <div class="service_circle3"><img src="images/service_circle.png" alt=""></div>
-        </div>
         <div class="service_top">
             <div class="service_sky"><img src="images/sky_3.png" alt="ミッドナイトブルーの夜空"></div>
             <div class="service_head">
@@ -151,7 +144,14 @@
                     <h2>できること</h2>
                     <p class="title_sub3">Service</p>
                 </div>
-                <div class="service_clock"><img src="images/clock_3.svg" alt="ミッドナイトブルーの時計"></div>
+                <div class="service_clock">
+                    <div class="service_circle">
+                        <div class="circle1"><img src="images/service_circle1.png" alt=""></div>
+                        <div class="circle2"><img src="images/service_circle2.png" alt=""></div>
+                        <div class="circle3"><img src="images/service_circle.png" alt=""></div>
+                    </div>
+                    <img src="images/clock_3.svg" alt="ミッドナイトブルーの時計">
+                </div>
             </div>
         </div>
         <div class="service_content">
@@ -186,15 +186,17 @@
     </section>
 
     <section id="contact">
-        <div class="contact_circle">
-            <div><img src="images/contact_circle1.png" alt=""></div>
-            <div><img src="images/contact_circle2.png" alt=""></div>
-            <div><img src="images/contact_circle3.png" alt=""></div>
-        </div>
 
         <div class="contact_content">
             <div class="contact_head">
-                <div class="contact_clock"><img src="images/clock_4.svg" alt="水縹の時計"></div>
+                <div class="contact_clock">
+                    <div class="contact_circle">
+                        <div><img class="circle1" src="images/contact_circle1.png" alt=""></div>
+                        <div><img class="circle2" src="images/contact_circle2.png" alt=""></div>
+                        <div><img class="circle3" src="images/contact_circle3.png" alt=""></div>
+                    </div>
+                    <img src="images/clock_4.svg" alt="水縹の時計">
+                </div>
                 <h2>お問い合わせ</h2>
                 <p>Contact</p>
                 <div class="contact_text">ご覧いただきありがとうございます。
@@ -216,17 +218,14 @@
         <div class="footer_menu">
             <ul>
                 <li><a href="#top">home</a></li>
-                <li><a href="#concept">concept</a></li>
-                <li><a href="#aboutme">about me</a></li>
-                <li><a href="works">works</a></li>
-                <li><a href="#service">service</a></li>
-                <li><a href="#contact">contact</a></li>
+                <li><a href="./concept/index.html">concept</a></li>
+                <li><a href="./about/index.html">about me</a></li>
+                <li><a href="./works/index.html">works</a></li>
+                <li><a href="./contact/index.html">contact</a></li>
             </ul>
         </div>
         <small>&copy;Nacht Design</small>
     </div>
-
-    <script src="js/script.js"></script>
 
 </body>
 

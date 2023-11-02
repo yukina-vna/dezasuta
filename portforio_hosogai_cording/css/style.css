@@ -1,4 +1,8 @@
 @charset "UTF-8";
+body {
+  padding-top: 0;
+}
+
 #loading {
   background-color: #fffddf;
   position: fixed;
@@ -190,6 +194,9 @@ h2 {
     text-align: center;
     line-height: 1.76;
     top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
   }
 }
 .concept_text {
@@ -392,9 +399,21 @@ h2 {
 }
 
 .works_clock {
+  position: relative;
   width: 80px;
   padding-right: 10px;
   margin-top: -15px;
+}
+
+.works_circle {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: calc(50% - 5px);
+  transform: translate(-50%, -100%);
+}
+.works_circle div {
+  margin-bottom: 30px;
 }
 
 .myworks {
@@ -409,13 +428,14 @@ h2 {
 
 .myworks_content_site {
   width: 30%;
-  height: 300px;
+  aspect-ratio: 1;
   background: #dcdde7;
   margin-bottom: 47px;
 }
 
 .myworks_content_banner {
   width: 30%;
+  aspect-ratio: 1;
   background: #dcdde7;
 }
 .myworks_content_banner img {
@@ -477,7 +497,7 @@ h2 {
   }
   .myworks_content_site {
     width: 100%;
-    height: 200px;
+    aspect-ratio: 1;
     margin-bottom: 40px;
   }
   .myworks_content_banner {
@@ -525,9 +545,21 @@ h2 {
 }
 
 .service_clock {
+  position: relative;
   width: 80px;
   padding-left: 15px;
   margin-top: -15px;
+}
+
+.service_circle {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: calc(50% + 5px);
+  transform: translate(-50%, -100%);
+}
+.service_circle div {
+  margin-bottom: 30px;
 }
 
 .service_content {
@@ -667,7 +699,7 @@ h2 {
   }
 }
 #contact {
-  margin-top: 110px;
+  margin-top: 250px;
 }
 
 .contact_content {
@@ -692,10 +724,22 @@ h2 {
 }
 
 .contact_clock {
+  position: relative;
   padding-bottom: 40px;
   width: 80px;
   display: block;
   margin: 0 auto;
+}
+
+.contact_circle {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+.contact_circle div {
+  margin-bottom: 30px;
 }
 
 .contact_text {
@@ -734,4 +778,28 @@ h2 {
     font-size: 15px;
     margin: 0 auto;
   }
+  .circle3 {
+    width: 25px;
+    margin: 0 auto;
+  }
+  .circle2 {
+    width: 15px;
+    margin: 0 auto;
+  }
+  .circle1 {
+    width: 8px;
+    margin: 0 auto;
+  }
+  .works_circle div {
+    margin-bottom: 12px;
+  }
+  .service_circle div {
+    margin-bottom: 12px;
+  }
+  .contact_circle div {
+    margin-bottom: 12px;
+  }
+}
+#footer {
+  margin-top: 120px;
 }/*# sourceMappingURL=style.css.map */

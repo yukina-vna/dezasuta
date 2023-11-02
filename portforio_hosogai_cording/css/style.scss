@@ -7,6 +7,10 @@ $sky4-color: #7ec7d8;
 
 // スクロールできるのはなぜ？？：解決 リセットCSS更新
 
+body {
+    padding-top: 0;
+}
+
 #loading {
     background-color: #fffddf;
     position: fixed;
@@ -199,7 +203,9 @@ ul li:last-child {
         text-align: center;
         line-height: 1.76;
         top: 30%;
-        
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%
     }
 }
 
@@ -400,9 +406,20 @@ ul li:last-child {
         justify-content: flex-end;
     }
     .works_clock {
+        position: relative;
         width: 80px;
         padding-right: 10px;
         margin-top: -15px;
+    }
+    .works_circle {
+        position: absolute;
+        text-align: center;
+        top: 0;
+        left: calc(50% - 5px);
+        transform: translate(-50%, -100%);
+        div {
+            margin-bottom: 30px;
+        }
     }
    
     .myworks {
@@ -416,7 +433,8 @@ ul li:last-child {
     }
     .myworks_content_site {
         width: 30%;
-        height: 300px;
+        aspect-ratio: 1;
+        // height: 300px;
         background: #dcdde7;
         margin-bottom: 47px;
             }
@@ -425,6 +443,7 @@ ul li:last-child {
             width: 250px;
         }
         width: 30%;
+        aspect-ratio: 1;
         // height: 300px;
         background: #dcdde7;
     }
@@ -487,7 +506,8 @@ ul li:last-child {
         }
         .myworks_content_site {
             width: 100%;
-            height: 200px;
+            aspect-ratio: 1;
+            // height: 200px;
             margin-bottom: 40px;
         }
         .myworks_content_banner {
@@ -533,9 +553,20 @@ ul li:last-child {
             display: block;
         }
         .service_clock {
+            position: relative;
             width: 80px;
             padding-left: 15px;
             margin-top: -15px;
+        }
+        .service_circle {
+            position: absolute;
+            text-align: center;
+            top: 0;
+            left: calc(50% + 5px);
+            transform: translate(-50%, -100%);
+            div {
+                margin-bottom: 30px;
+            }
         }
         .service_content {
             max-width: 690px;
@@ -676,7 +707,7 @@ ul li:last-child {
         }
 
         #contact {
-            margin-top: 110px;
+            margin-top: 250px;
         }
         .contact_content{
             display: flex;
@@ -698,10 +729,21 @@ ul li:last-child {
             text-align: center;
         }
         .contact_clock {
+            position: relative;
             padding-bottom: 40px;
             width: 80px;
             display: block;
             margin: 0 auto;
+        }
+        .contact_circle {
+            position: absolute;
+            text-align: center;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -100%);
+            div {
+                margin-bottom: 30px;
+            }
         }
         .contact_text {
             font-size: 15px;
@@ -709,43 +751,6 @@ ul li:last-child {
             padding-top: 82px;
             margin-bottom: 95px;
         }
-        // .btn {
-        //     display: block;
-        //     width: 400px;
-        //     margin: 0 auto;
-        //     padding: 5px 10px;
-        //     box-sizing: border-box;
-        //     background: #171c61;
-        //   }
-        //   .btn-inner {
-        //     position: relative;
-        //     display: flex;
-        //     justify-content: center;
-        //     align-items: center;
-        //     padding: 15px 0;
-        //     border-top: 1px solid #fff;
-        //     border-bottom: 1px solid #fff;
-        //     color: #fff;
-        //     font-size: 18px;
-        //     line-height: 1;
-        //   }
-        //   .btn-inner::before,
-        //   .btn-inner::after {
-        //     content: "";
-        //     position: absolute;
-        //     top: 50%;
-        //     transform: translateY(-50%);
-        //     width: 5px;
-        //     height: 5px;
-        //     border-radius: 99rem;
-        //     background: #fff;
-        //   }
-        //   .btn-inner::before {
-        //     left: 0;
-        //   }
-        //   .btn-inner::after {
-        //     right: 0;
-        //   }
 
         @media screen and (max-width: 767px) {
             .contact_clock {
@@ -778,11 +783,34 @@ ul li:last-child {
                 font-size: 15px;
                 margin: 0 auto;
             }
-            // .btn {
-            //     width: 250px;
-            // }
-            // .btn-inner {
-            //     font-size: 15px;
-            //     padding: 10px 0;
-            // }
+            .circle3 {
+                width: 25px;
+                margin: 0 auto;
+            }
+            .circle2 {
+                width: 15px;
+                margin: 0 auto;
+            }
+            .circle1 {
+                width: 8px;
+                margin: 0 auto;
+            }
+            .works_circle {
+                div {
+                    margin-bottom: 12px;
+                }
+            }
+            .service_circle {
+                div {
+                    margin-bottom: 12px;
+                }
+            }
+            .contact_circle {
+                div {
+                    margin-bottom: 12px;
+                }
+            }
+        }
+        #footer {
+            margin-top: 120px;
         }
