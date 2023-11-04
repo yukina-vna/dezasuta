@@ -48,9 +48,9 @@ body {
     margin: 0px;
     overflow-x: hidden; /* 背景の円が画面からはみ出しても横スクロールが出ないようにする */
 }
-a:hover {
-    opacity: 0.5;
-}
+/* a:hover {
+    opacity: 0.5; */
+/* } */
 html {
     scroll-behavior: smooth;
 }
@@ -201,11 +201,72 @@ html {
     margin-right: 0;
 }
 
+/* 以下ホバー処理 */
+.header_menu_pc li a {
+    position: relative;
+    /* 線の基点とする */
+}
+/* .header_menu_pc li.current a,
+.header_menu_pc li a:hover {
+    color: #fffddf;
+} */
+.header_menu_pc li a::after {
+    content: "";
+    position: absolute;
+    /* 線の位置を決める */
+    bottom: -5px;
+    left: -3%;
+    /* 線の形状 */
+    width: 110%;
+    height: 1px;
+    background: #fffddf;
+    /* アニメーションの指定 */
+    transition: all 0.3s;
+    transform: scale(0, 1);
+    transform-origin: left top;
+}
+/* 現在地とhoverの指定 */
+.header_menu_pc li.current a::after,
+.header_menu_pc li a:hover::after {
+    transform: scale(1, 1);
+    /* X方向にスケール拡大 */
+}
+
+.footer_menu li a {
+    position: relative;
+    /* 線の基点とする */
+}
+/* .footer_menu li.current_footer a,
+.footer_menu li a:hover {
+    color: #fffddf;
+} */
+.footer_menu li a::after {
+    content: "";
+    position: absolute;
+    /* 線の位置を決める */
+    bottom: -5px;
+    left: -3%;
+    /* 線の形状 */
+    width: 110%;
+    height: 1px;
+    background: #fffddf;
+    /* アニメーションの指定 */
+    transition: all 0.3s;
+    transform: scale(0, 1);
+    transform-origin: left top;
+}
+/* 現在地とhoverの指定 */
+.footer_menu li.current_footer a::after,
+.footer_menu li a:hover::after {
+    transform: scale(1, 1);
+    /* X方向にスケール拡大 */
+}
+
 /* カレント表示用 */
-.is-current {
+/* .is-current {
     border-bottom: 1px solid #fffddf;
     padding-bottom: 4px;
-}
+} */
 
 /* .header_sky_sp {
     display: none;
@@ -231,78 +292,115 @@ html {
     .header_menu_pc {
         display: none;
     }
+
+    /* ハンバーガーメニュー */
+    /* 線 */
     .sp_btn {
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        /* 上下中央に配置 */
         right: 25px;
         display: block;
-        height: 23px;
+        border: 10px solid transparent;
+        border-radius: 50%;
+        background-color: #fffef5;
+        width: 25px;
+        height: 25px;
         cursor: pointer;
-        z-index: 200;
+        z-index: 1000;
     }
     .sp_btn span {
         position: relative;
-        top: 10px;
-        display: block;
-        width: 33px;
-        height: 3px;
+        top: 2px;
         border-radius: 2px;
-        background: #fffeef;
+        display: block;
+        background-color: #171c61;
+        height: 2px;
         transition: 0.3s;
+        margin-bottom: 7px;
+    }
+    .sp_btn p {
+        position: relative;
+        text-align: center;
+        font-size: 65%;
+        transform: translate(0px, -2px);
+        font-weight: bold;
     }
 
-    .sp_btn span::before,
-    .sp_btn span::after {
-        position: absolute;
-        content: "";
-        display: block;
-        width: 33px;
-        height: 3px;
-        border-radius: 2px;
-        background: #fffddf;
-        transition: 0.3s;
+    /* クリックした時 */
+    .sp_btn.open {
+        z-index: 1002;
     }
-    .sp_btn span::before {
-        bottom: 10px;
-    }
-    .sp_btn span::after {
-        top: 10px;
-    }
-
     .sp_btn.open span {
-        background: transparent;
+        background-color: #171c61;
     }
-    .sp_btn.open span::before {
-        bottom: 0;
-        transform: rotate(45deg);
+    .sp_btn.open span:first-of-type {
+        transform: rotate(-135deg);
+        top: 6px;
     }
-    .sp_btn.open span::after {
-        top: 0;
+    .sp_btn.open span:last-of-type {
         transform: rotate(135deg);
+        top: -3px;
     }
-    .sp_nav {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: #171c61;
-        z-index: 1;
-        padding-left: 10%;
+    .sp_btn.open p {
+        font-size: 0;
     }
-    .sp_nav ul {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 100%;
+    .sp_btn.open p::before {
+        content: "close";
+        font-size: 11px;
+        color: #171c61;
+        position: relative;
+        top: 2px;
     }
-    .sp_nav ul li {
-        padding: 20px;
-        color: #fffddf;
-        font-size: 18px;
-    }
+}
+.sp_nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #171c61;
+    z-index: 1;
+    padding-left: 10%;
+}
+.sp_nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.sp_nav ul li {
+    padding: 20px;
+    color: #fffddf;
+    font-size: 18px;
+}
+
+.sp_nav li a {
+    position: relative;
+    /* 線の基点とする */
+}
+/* .sp_nav li.current a,
+.sp_nav li a:hover {
+    color: #fffddf;
+} */
+.sp_nav li a::after {
+    content: "";
+    position: absolute;
+    /* 線の位置を決める */
+    bottom: -5px;
+    left: -3%;
+    /* 線の形状 */
+    width: 100vw;
+    height: 1px;
+    background: #fffddf;
+    /* アニメーションの指定 */
+    transition: all 0.6s;
+    transform: scale(0, 1);
+    transform-origin: left top;
+}
+/* 現在地とhoverの指定 */
+.sp_nav li.current a::after,
+.sp_nav li a:hover::after {
+    transform: scale(1, 1);
+    /* X方向にスケール拡大 */
 }
 
 .bottom_circle {
@@ -343,6 +441,11 @@ html {
     padding: 5px 10px;
     box-sizing: border-box;
     background: #171c61;
+    transition: 0.3s ease-out;
+}
+.btn:hover {
+    background: #5d6090;
+    border-radius: 10px;
 }
 .btn-inner {
     position: relative;

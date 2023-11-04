@@ -3,29 +3,81 @@ body {
   padding-top: 0;
 }
 
-#loading {
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
   background-color: #fffddf;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader_sun {
+  width: 100px;
+  animation: anim 2.3s;
+}
+
+@keyframes anim {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(100px);
+  }
+}
+.loader_box {
+  position: relative;
+  margin-top: 20px;
+}
+.loader_box img {
+  width: 250px;
+}
+
+.loader_text {
+  position: absolute;
+  left: 50%;
+  top: 7%;
+  transform: translate(-40%);
+  font-size: 20px;
+  color: #171c61;
+  text-align: center;
+}
+
+.loaded {
   position: fixed;
-  z-index: 9999;
-  inset: 0;
-  display: grid;
-  place-items: center;
-}
-
-.loading_sun {
-  width: 200px;
-}
-
-#loading-screen {
+  width: 100%;
+  height: 100vh;
   background-color: #171c61;
-  position: fixed;
-  inset: 0;
-  z-index: 9998;
-  translate: 0 100vh;
+  z-index: 2001;
+  top: 0;
+  left: 0;
 }
 
-#loading p {
-  font-size: 2rem;
+/* 真っ暗な背景のスタイル */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #171c61; /* 黒の背景 */
+  z-index: 9999; /* コンテンツより前面に表示 */
+  opacity: 0; /* 最初は透明 */
+  transition: opacity 1.5s; /* フェードのアニメーションを追加 */
+  pointer-events: none; /* イベントの対象外にする */
+  visibility: hidden;
+}
+
+/* コンテンツを包む要素 */
+.content {
+  visibility: hidden; /* 初期状態は非表示 */
+  opacity: 0;
+  transition: opacity 1.2s;
 }
 
 body {
@@ -44,6 +96,26 @@ h2 {
   z-index: 200;
 }
 
+.is-fixed {
+  background-image: url(../images/header.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 70px;
+  opacity: 1 !important;
+  transition: 0.4s;
+}
+.is-fixed img {
+  width: 70px;
+}
+.is-fixed .header_menu_pc {
+  top: 30px;
+}
+
 @media screen and (max-width: 1000px) {
   .header_logo_fv {
     width: 70px;
@@ -56,8 +128,18 @@ h2 {
   .header_menu_pc {
     display: none;
   }
-  .sp_btn {
+  .is-fixed {
+    height: 60px;
+  }
+  .is-fixed img {
+    width: 60px;
+    margin-top: 4px;
+  }
+  .is-fixed .sp_btn {
     top: 8%;
+  }
+  .sp_btn {
+    top: 5%;
   }
 }
 .header_menu_pc {
@@ -97,6 +179,21 @@ h2 {
   display: none;
 }
 
+.fadeUp {
+  animation-name: fadeUpAnime;
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .mv_foot1 {
   width: 60px;
   position: absolute;
@@ -111,6 +208,7 @@ h2 {
   top: 40%;
   left: 23%;
   transform: rotate(10deg);
+  animation-delay: 0.5s;
 }
 
 .mv_foot3 {
@@ -119,14 +217,16 @@ h2 {
   top: 46%;
   left: 30%;
   transform: rotate(-12deg);
+  animation-delay: 0.7s;
 }
 
 .mv_foot4 {
   width: 60px;
   position: absolute;
-  top: 55%;
+  top: 58%;
   left: 24%;
   transform: rotate(12deg);
+  animation-delay: 0.9s;
 }
 
 .mv_text {
@@ -136,6 +236,7 @@ h2 {
   bottom: 35%;
   right: 10%;
   line-height: 1.5;
+  animation: 1.2s;
 }
 
 @media screen and (max-width: 1000px) {
@@ -275,18 +376,25 @@ h2 {
 }
 
 .view_more1 {
-  color: #18448e;
-  margin-top: 35px;
   display: flex;
-  align-items: center; /* 垂直中心 */
+  align-items: center;
+  padding-bottom: 4px;
+  position: relative;
+  margin-top: 35px;
 }
 .view_more1::after {
-  border-top: 1px solid #18448e;
+  background-color: #171c61;
+  bottom: 0;
   content: "";
-  width: 185px; /* 線の長さ */
+  height: 1px;
+  left: 30%;
+  top: 50%;
+  position: absolute;
+  transition: 0.5s all;
+  width: 0;
 }
-.view_more1::after {
-  margin-left: 12px; /* 文字の左隣 */
+.view_more1:hover::after {
+  width: 185px;
 }
 
 @media screen and (max-width: 767px) {
@@ -339,19 +447,25 @@ h2 {
   }
   .view_more1_sp {
     justify-content: flex-end;
-    font-size: 10px;
+    position: relative;
+    font-size: 12px;
     color: #18448e;
     margin-top: 35px;
     display: flex;
     align-items: center; /* 垂直中心 */
   }
   .view_more1_sp::after {
-    border-top: 0.5px solid #18448e;
+    position: absolute;
+    background: #171c61;
+    bottom: 0;
+    height: 1px;
     content: "";
-    width: 120px; /* 線の長さ */
+    left: 30%;
+    top: 50%;
+    width: 0; /* 線の長さ */
   }
-  .view_more1_sp::after {
-    margin-left: 12px; /* 文字の左隣 */
+  .view_more1_sp::after:hover::after {
+    width: 120px;
   }
   .about_sky {
     width: 65px;
@@ -452,21 +566,37 @@ h2 {
 }
 
 .view_more2 {
-  color: #211e55;
   display: flex;
-  align-items: center; /* 垂直中心 */
+  align-items: center;
+  padding-bottom: 4px;
   padding-top: 30px;
   margin: 0 0 0 auto;
 }
 .view_more2::after {
-  border-top: 1px solid #18448e;
+  background-color: #171c61;
+  bottom: 0;
+  margin-left: 12px;
   content: "";
-  width: 185px; /* 線の長さ */
+  height: 1px;
+  width: 185px;
+  visibility: hidden;
 }
-.view_more2::after {
-  margin-left: 12px; /* 文字の左隣 */
+.view_more2:hover::after {
+  visibility: visible;
+  animation-duration: 0.5s;
+  animation-name: fade-in;
 }
 
+@keyframes fade-in {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
 @media screen and (max-width: 767px) {
   .works_sky {
     width: 63px;
@@ -505,11 +635,10 @@ h2 {
   }
   .view_more2 {
     padding: 0;
-    font-size: 10px;
+    font-size: 12px;
     justify-content: flex-end;
   }
   .view_more2::after {
-    border-top: 0.5px solid #18448e;
     content: "";
     width: 120px; /* 線の長さ */
   }

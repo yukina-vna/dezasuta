@@ -30,75 +30,6 @@
     });
   });
 
-  // works詳細ページ view all
-const buttonOpen = document.getElementById('modalOpen');
-const modal = document.getElementById('easyModal');
-const buttonClose = document.getElementsByClassName('modalClose')[0];
-
-// ボタンがクリックされた時
-buttonOpen.addEventListener('click', modalOpen);
-function modalOpen() {
-  modal.style.display = 'block';
-}
-
-// バツ印がクリックされた時
-buttonClose.addEventListener('click', modalClose);
-function modalClose() {
-  modal.style.display = 'none';
-}
-
-// モーダルコンテンツ以外がクリックされた時
-addEventListener('click', outsideClose);
-function outsideClose(e) {
-  if (e.target == modal) {
-    modal.style.display = 'none';
-  }
-}
-
-// SP
-const buttonOpen_sp1 = document.getElementById('modalOpen_sp1');
-const modal_sp1 = document.getElementById('easyModal_sp1');
-const buttonClose_sp1 = document.getElementsByClassName('modalClose_sp')[0];
-
-const buttonOpen_sp2 = document.getElementById('modalOpen_sp2');
-const modal_sp2 = document.getElementById('easyModal_sp2');
-const buttonClose_sp2 = document.getElementsByClassName('modalClose_sp')[1];
-
-// ボタンがクリックされた時
-buttonOpen_sp1.addEventListener('click', modalOpen_sp1);
-function modalOpen_sp1() {
-  modal_sp1.style.display = 'block';
-}
-
-// バツ印がクリックされた時
-buttonClose_sp1.addEventListener('click', modalClose_sp);
-buttonClose_sp2.addEventListener('click', modalClose_sp);
-function modalClose_sp() {
-  modal_sp1.style.display = 'none';
-  modal_sp2.style.display = 'none';
-}
-
-// モーダルコンテンツ以外がクリックされた時
-addEventListener('click', outsideClose);
-function outsideClose(e) {
-  if (e.target == modal) {
-    modal_sp1.style.display = 'none';
-  }
-}
-
-// ボタンがクリックされた時
-buttonOpen_sp2.addEventListener('click', modalOpen_sp2);
-function modalOpen_sp2() {
-  modal_sp2.style.display = 'block';
-}
-
-// モーダルコンテンツ以外がクリックされた時
-addEventListener('click', outsideClose);
-function outsideClose(e) {
-  if (e.target == modal) {
-    modal_sp2.style.display = 'none';
-  }
-}
 
 // ページネーション
 /* 
@@ -130,11 +61,90 @@ $(function () {
 });
 
 // ヘッダー カレント表示
-const headerNavLink = document.querySelectorAll('.js-header');
+// const headerNavLink = document.querySelectorAll('.js-header');
 
-headerNavLink.forEach((targetLink) => {
-  if (targetLink.href === location.href) {
-    targetLink.parentElement.classList.add('is-current');
-  }
+// headerNavLink.forEach((targetLink) => {
+//   if (targetLink.href === location.href) {
+//     targetLink.parentElement.classList.add('is-current');
+//   }
+// });
+
+// ローディング 2回目以降非表示にする操作ができていない
+// $(function () {
+//   var webStorage = function () {
+//     if (sessionStorage.getItem('access')) {
+//       /*
+//         2回目以降アクセス時の処理
+//       */
+//       $(".loading").addClass('is-active');
+//     } else {
+//       /*
+//         初回アクセス時の処理
+//       */
+//       sessionStorage.setItem('access', 'true'); // sessionStorageにデータを保存
+//       setTimeout(function () {
+//         // ローディングを数秒後に非表示にする
+//         $(".loader").addClass('is-active');
+//         $(".loading-animation").removeClass('is-active');
+//       }, 3000); // ローディングを表示する時間
+//     }
+//   }
+//   webStorage();
+// });
+
+// $(function () {
+// var webStorage = function () {
+// if (sessionStorage.getItem('access')) {
+//   // 2回目以降アクセス時の処理
+//   $(".loading").addClass('is-active');
+// } else {
+// // 初回アクセス時の処理
+// sessionStorage.setItem('access', 'true');
+// $(".loader").addClass('is-active');
+// $(window).on("load", function () {
+//   // ローディング画面を非表示にする
+//   $(".loading").delay(1700).fadeOut(650);
+
+//   // 2秒後に真っ暗な背景をフェードイン
+//   setTimeout(function () {
+//       $(".overlay").css("visibility", "visible");
+//       $(".overlay").css("opacity", "1"); // 不透明にすることでフェードイン
+//   }, 2000); // 2秒後にフェードイン
+
+//   // 3秒後に真っ暗な背景をフェードアウト
+//   setTimeout(function () {
+//       $(".overlay").css("opacity", "0"); // 透明にすることでフェードアウト
+//   }, 3000); // 3秒後にフェードアウト
+
+//   // 4秒後にコンテンツが表示される
+//   setTimeout(function () {
+//       $(".content").css("visibility", "visible");
+//       $(".content").css("opacity", "1"); // 不透明にすることでフェードイン
+//   }, 4000); // 4秒後にコンテンツを表示
+// });
+// }
+// }
+// });
+
+
+$(window).on("load", function () {
+  // ローディング画面を非表示にする
+  $(".loader").delay(1700).fadeOut(650);
+
+  // 2秒後に真っ暗な背景をフェードイン
+  setTimeout(function () {
+      $(".overlay").css("visibility", "visible");
+      $(".overlay").css("opacity", "1"); // 不透明にすることでフェードイン
+  }, 2000); // 2秒後にフェードイン
+
+  // 3秒後に真っ暗な背景をフェードアウト
+  setTimeout(function () {
+      $(".overlay").css("opacity", "0"); // 透明にすることでフェードアウト
+  }, 3000); // 3秒後にフェードアウト
+
+  // 4秒後にコンテンツが表示される
+  setTimeout(function () {
+      $(".content").css("visibility", "visible");
+      $(".content").css("opacity", "1"); // 不透明にすることでフェードイン
+  }, 4000); // 4秒後にコンテンツを表示
 });
-
